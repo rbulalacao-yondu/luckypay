@@ -5,14 +5,20 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { Not, IsNull, MoreThan } from 'typeorm';
+import { ConfigService } from '@nestjs/config';
 import { User, UserRole } from '../users/entities/user.entity';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
+import { OtpConfigDto } from './dto/otp-config.dto';
+import { OtpService } from '../auth/services/otp.service';
 
 @Injectable()
 export class AdminService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+    private readonly configService: ConfigService,
+    private readonly otpService: OtpService,
   ) {}
 
   async getAllUsers(): Promise<User[]> {
@@ -96,5 +102,51 @@ export class AdminService {
 
     // Admin can only update roles of lower level
     return adminLevel > currentLevel && adminLevel > newLevel;
+  }
+
+  async getOtpSettings() {
+    return {
+      expiryMinutes: this.configService.get<number>('otpExpiryMinutes'),
+      maxAttempts: this.configService.get<number>('maxOtpAttempts'),
+    };
+  }
+
+  async updateOtpSettings(config: OtpConfigDto) {
+    if (config.expiryMinutes) {
+      process.env.OTP_EXPIRY_MINUTES = config.expiryMinutes.toString();
+    }
+    if (config.maxAttempts) {
+      process.env.MAX_OTP_ATTEMPTS = config.maxAttempts.toString();
+    }
+    return this.getOtpSettings();
+  }
+
+  async revokeUserOtp(userId: number): Promise<void> {
+    const user = await this.userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!user) {
+      throw new NotFoundException(`User with ID ${userId} not found`);
+    }
+
+    await this.otpService.clearOtp(user);
+  }
+
+  async getPendingOtps() {
+    const users = await this.userRepository.find({
+      where: {
+        currentOtp: Not(IsNull()),
+        otpExpiresAt: MoreThan(new Date()),
+      },
+      select: ['id', 'mobileNumber', 'otpExpiresAt', 'otpAttempts'],
+    });
+
+    return users.map((user) => ({
+      userId: user.id,
+      mobileNumber: user.mobileNumber,
+      expiresAt: user.otpExpiresAt,
+      attempts: user.otpAttempts,
+    }));
   }
 }
