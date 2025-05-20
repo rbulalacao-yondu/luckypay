@@ -31,7 +31,6 @@ export enum LoyaltyTier {
 }
 
 @Entity('users')
-@Index(['mobileNumber'], { unique: true })
 @Index(['email'], { unique: true, where: 'email IS NOT NULL' })
 @Index(['status', 'role']) // For filtering users by status and role
 export class User {
@@ -42,8 +41,8 @@ export class User {
   @Index()
   email?: string;
 
-  @Column({ unique: true })
-  @Index()
+  @Column()
+  @Index({ unique: true })
   mobileNumber: string;
 
   @Exclude()
