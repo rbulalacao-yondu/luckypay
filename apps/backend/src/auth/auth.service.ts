@@ -7,6 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
 import { LoginDto } from './dto/login.dto';
 import { OtpService } from './services/otp.service';
+import { TokenService } from './services/token.service';
 import { UserStatus } from '../users/entities/user.entity';
 
 @Injectable()
@@ -15,6 +16,7 @@ export class AuthService {
     private usersService: UsersService,
     private jwtService: JwtService,
     private otpService: OtpService,
+    private tokenService: TokenService,
   ) {}
 
   async validateUser(email: string, pass: string): Promise<any> {
@@ -72,9 +74,11 @@ export class AuthService {
       await this.usersService.update(user.id, user);
     }
 
-    const payload = { mobileNumber: user.mobileNumber, sub: user.id };
+    // Generate access and refresh tokens
+    const tokens = await this.tokenService.generateTokens(user);
+
     return {
-      access_token: this.jwtService.sign(payload),
+      ...tokens,
       user: {
         id: user.id,
         mobileNumber: user.mobileNumber,
@@ -87,7 +91,15 @@ export class AuthService {
   async logout(userId: number): Promise<void> {
     const user = await this.usersService.findOne(userId);
     if (user) {
-      await this.otpService.clearOtp(user);
+      // Clear OTP and revoke all active tokens
+      await Promise.all([
+        this.otpService.clearOtp(user),
+        this.tokenService.revokeAllUserTokens(userId),
+      ]);
     }
+  }
+
+  async refreshTokens(refreshToken: string) {
+    return this.tokenService.refreshAccessToken(refreshToken);
   }
 }

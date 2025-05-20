@@ -6,11 +6,13 @@ import {
   Request,
   HttpCode,
   HttpStatus,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RequestOtpDto } from './dto/request-otp.dto';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
+import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import {
   ApiTags,
@@ -104,5 +106,39 @@ export class AuthController {
   @Post('logout')
   async logout(@Request() req) {
     return this.authService.logout(req.user.sub);
+  }
+
+  @Post('refresh')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Refresh access token using refresh token' })
+  @ApiBody({ type: RefreshTokenDto })
+  @ApiResponse({
+    status: 200,
+    description: 'New access token generated successfully',
+    schema: {
+      type: 'object',
+      properties: {
+        accessToken: {
+          type: 'string',
+          example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+        },
+        refreshToken: {
+          type: 'string',
+          example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+        },
+        expiresIn: {
+          type: 'number',
+          example: 1621555555555,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 401, description: 'Invalid or expired refresh token' })
+  async refreshToken(@Body() { refreshToken }: RefreshTokenDto) {
+    const tokens = await this.authService.refreshTokens(refreshToken);
+    if (!tokens) {
+      throw new UnauthorizedException('Invalid or expired refresh token');
+    }
+    return tokens;
   }
 }
