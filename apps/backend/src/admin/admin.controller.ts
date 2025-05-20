@@ -17,9 +17,11 @@ import { Roles } from '../auth/rbac/roles.decorator';
 import { Role } from '../auth/rbac/roles.enum';
 import { UserRole } from '../users/entities/user.entity';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
+import { OtpConfigDto } from './dto/otp-config.dto';
+import { UpdateLoyaltySettingsDto } from './dto/update-loyalty-settings.dto';
+import { TransactionQueryDto } from './dto/transaction-query.dto';
 import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
 import { SecurityLogType } from './entities/security-log.entity';
-import { OtpConfigDto } from './dto/otp-config.dto';
 
 @Controller('admin')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -88,5 +90,44 @@ export class AdminController {
   @Roles(Role.SUPER_ADMIN)
   async getSecurityLogsByUser(@Param('userId', ParseIntPipe) userId: number) {
     return this.adminService.getSecurityLogsByUser(userId);
+  }
+
+  // Transaction Management Endpoints
+  @Get('transactions/overview')
+  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
+  async getTransactionOverview() {
+    return this.adminService.getTransactionOverview();
+  }
+
+  @Get('transactions/stats')
+  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
+  async getTransactionStats(@Query() query: TransactionQueryDto) {
+    return this.adminService.getTransactionStats(
+      query.startDate
+        ? new Date(query.startDate)
+        : new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+      query.endDate ? new Date(query.endDate) : new Date(),
+    );
+  }
+
+  // Loyalty Program Management Endpoints
+  @Get('loyalty/settings')
+  @Roles(Role.SUPER_ADMIN, Role.LOYALTY_MANAGER)
+  async getLoyaltyProgramSettings() {
+    return this.adminService.getLoyaltyProgramSettings();
+  }
+
+  @Put('loyalty/settings')
+  @Roles(Role.SUPER_ADMIN, Role.LOYALTY_MANAGER)
+  async updateLoyaltyProgramSettings(
+    @Body() settings: UpdateLoyaltySettingsDto,
+  ) {
+    return this.adminService.updateLoyaltyProgramSettings(settings);
+  }
+
+  @Get('loyalty/metrics')
+  @Roles(Role.SUPER_ADMIN, Role.LOYALTY_MANAGER)
+  async getLoyaltyMetrics() {
+    return this.adminService.getLoyaltyMetrics();
   }
 }

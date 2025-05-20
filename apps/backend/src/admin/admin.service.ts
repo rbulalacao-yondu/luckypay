@@ -214,4 +214,77 @@ export class AdminService {
       order: { createdAt: 'DESC' },
     });
   }
+
+  // Transaction Management Methods
+  async getTransactionOverview(): Promise<any> {
+    // TODO: Implement transaction overview logic
+    return {
+      totalTransactions: 0,
+      totalVolume: 0,
+      averageTransaction: 0,
+      recentTransactions: [],
+    };
+  }
+
+  async getTransactionStats(startDate: Date, endDate: Date): Promise<any> {
+    // TODO: Implement transaction statistics logic
+    return {
+      dailyVolume: [],
+      transactionTypes: {
+        topup: 0,
+        withdrawal: 0,
+        transfer: 0,
+      },
+      successRate: 0,
+    };
+  }
+
+  // Loyalty Program Management Methods
+  async getLoyaltyProgramSettings(): Promise<any> {
+    // TODO: Implement loyalty settings retrieval
+    return {
+      tiers: [
+        {
+          name: 'Bronze',
+          pointThreshold: 0,
+          benefits: [],
+        },
+        {
+          name: 'Silver',
+          pointThreshold: 1000,
+          benefits: [],
+        },
+        {
+          name: 'Gold',
+          pointThreshold: 5000,
+          benefits: [],
+        },
+      ],
+      pointsPerPeso: 1,
+      expiryDays: 365,
+    };
+  }
+
+  async updateLoyaltyProgramSettings(settings: any): Promise<any> {
+    // TODO: Implement loyalty settings update
+    return {
+      success: true,
+      message: 'Loyalty program settings updated successfully',
+      settings,
+    };
+  }
+
+  async getLoyaltyMetrics(): Promise<any> {
+    // TODO: Implement loyalty metrics retrieval
+    return {
+      totalActiveMembers: 0,
+      tierDistribution: {
+        Bronze: 0,
+        Silver: 0,
+        Gold: 0,
+      },
+      totalPointsIssued: 0,
+      totalPointsRedeemed: 0,
+    };
+  }
 }
