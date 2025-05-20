@@ -1,5 +1,6 @@
-import { Box, Typography, Paper } from '@mui/material';
+import { Box, Typography, Paper, CircularProgress } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useDashboardStats } from '../hooks/queries/useDashboardStats';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -13,6 +14,31 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Dashboard() {
+  const { data: stats, isLoading, error } = useDashboardStats();
+
+  if (isLoading) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ p: 3 }}>
+        <Typography color="error">Error loading dashboard data</Typography>
+      </Box>
+    );
+  }
+
   return (
     <Box component="div">
       <Typography variant="h4" gutterBottom>
@@ -34,25 +60,33 @@ export default function Dashboard() {
           <Typography variant="h6" gutterBottom>
             Total Users
           </Typography>
-          <Typography variant="h4">1,234</Typography>
+          <Typography variant="h4">
+            {stats?.totalUsers.toLocaleString()}
+          </Typography>
         </StyledPaper>
         <StyledPaper>
           <Typography variant="h6" gutterBottom>
             Active Users
           </Typography>
-          <Typography variant="h4">987</Typography>
+          <Typography variant="h4">
+            {stats?.activeUsers.toLocaleString()}
+          </Typography>
         </StyledPaper>
         <StyledPaper>
           <Typography variant="h6" gutterBottom>
             Total Transactions
           </Typography>
-          <Typography variant="h4">5,678</Typography>
+          <Typography variant="h4">
+            {stats?.totalTransactions.toLocaleString()}
+          </Typography>
         </StyledPaper>
         <StyledPaper>
           <Typography variant="h6" gutterBottom>
             Revenue
           </Typography>
-          <Typography variant="h4">₱123,456</Typography>
+          <Typography variant="h4">
+            ₱{stats?.revenue.toLocaleString()}
+          </Typography>
         </StyledPaper>
       </Box>
     </Box>
