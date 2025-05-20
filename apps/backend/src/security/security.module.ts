@@ -1,6 +1,6 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 import * as cors from 'cors';
 import * as session from 'express-session';
 import * as cookieParser from 'cookie-parser';
@@ -12,7 +12,7 @@ export class SecurityModule implements NestModule {
 
   configure(consumer: MiddlewareConsumer) {
     // Apply Helmet security headers
-    consumer.apply(helmet()).forRoutes('*');
+    consumer.apply(helmet).forRoutes('*');
 
     // Apply CORS
     consumer

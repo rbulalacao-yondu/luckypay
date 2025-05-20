@@ -21,6 +21,7 @@
     "nest": "nest"
   },
   "dependencies": {
+    "@luckypay/shared-types": "^0.0.1",
     "@nestjs/common": "^11.1.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.0",
