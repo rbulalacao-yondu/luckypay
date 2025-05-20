@@ -1,9 +1,15 @@
 module.exports = {
   root: true,
-  env: { node: true, es2022: true },
+  env: {
+    node: true,
+    es2022: true,
+    browser: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
