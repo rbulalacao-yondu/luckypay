@@ -10,6 +10,8 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 import { OtpService } from './services/otp.service';
 import { TokenService } from './services/token.service';
 import { User } from '../users/entities/user.entity';
+import { CasbinConfigModule } from './casbin/casbin.module';
+import { CasbinGuard } from './casbin/casbin.guard';
 
 @Module({
   imports: [
@@ -17,6 +19,7 @@ import { User } from '../users/entities/user.entity';
     PassportModule,
     TypeOrmModule.forFeature([User]),
     ConfigModule,
+    CasbinConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
@@ -29,7 +32,7 @@ import { User } from '../users/entities/user.entity';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, OtpService, TokenService],
-  exports: [AuthService, OtpService, TokenService],
+  providers: [AuthService, JwtStrategy, OtpService, TokenService, CasbinGuard],
+  exports: [AuthService, OtpService, TokenService, CasbinGuard],
 })
 export class AuthModule {}

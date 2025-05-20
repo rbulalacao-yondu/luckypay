@@ -1,0 +1,35 @@
+p, super_admin, users, read
+p, super_admin, users, create
+p, super_admin, users, update
+p, super_admin, users, delete
+p, super_admin, transactions, read
+p, super_admin, transactions, create
+p, super_admin, transactions, update
+p, super_admin, transactions, delete
+p, super_admin, machines, read
+p, super_admin, machines, create
+p, super_admin, machines, update
+p, super_admin, machines, delete
+p, super_admin, loyalty, read
+p, super_admin, loyalty, create
+p, super_admin, loyalty, update
+p, super_admin, loyalty, delete
+
+p, finance_admin, users, read
+p, finance_admin, transactions, read
+p, finance_admin, transactions, create
+p, finance_admin, transactions, update
+p, finance_admin, reports, read
+
+p, loyalty_manager, users, read
+p, loyalty_manager, loyalty, read
+p, loyalty_manager, loyalty, create
+p, loyalty_manager, loyalty, update
+p, loyalty_manager, reports, read
+
+p, user, transactions, read
+p, user, loyalty, read
+
+g, super_admin, admin
+g, finance_admin, staff
+g, loyalty_manager, staff
