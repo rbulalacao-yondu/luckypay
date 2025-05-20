@@ -1,5 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { authenticator } from 'otplib';
+import {
+  Injectable,
+  UnauthorizedException,
+  BadRequestException,
+} from '@nestjs/common';
+import * as crypto from 'crypto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
@@ -14,19 +18,18 @@ export class OtpService {
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
     private readonly configService: ConfigService,
-  ) {
-    // Configure OTP settings
-    authenticator.options = {
-      window: 1, // Allow 1 step drift for time-based tokens
-      step: 30, // 30 second step
-    };
+  ) {}
+
+  private generateRandomOtp(): string {
+    // Generate a cryptographically secure 6-digit OTP
+    const buffer = crypto.randomBytes(3); // 3 bytes = 6 digits
+    const number = buffer.readUIntBE(0, 3);
+    return String(number % 1000000).padStart(6, '0');
   }
 
   async generateOtp(user: User): Promise<string> {
     // Generate a 6-digit OTP
-    const otp = authenticator.generateToken(
-      this.configService.get('OTP_SECRET') || 'defaultSecret',
-    );
+    const otp = this.generateRandomOtp();
 
     // Update user with new OTP
     user.currentOtp = otp;
@@ -39,26 +42,34 @@ export class OtpService {
   }
 
   async validateOtp(user: User, otp: string): Promise<boolean> {
+    // Check if OTP exists
+    if (!user.currentOtp) {
+      throw new BadRequestException('No OTP request found');
+    }
+
     // Check if OTP has expired
     if (!user.otpExpiresAt || user.otpExpiresAt < new Date()) {
-      throw new Error('OTP has expired');
+      throw new UnauthorizedException('OTP has expired');
     }
 
     // Check if max attempts exceeded
     if (user.otpAttempts >= this.MAX_OTP_ATTEMPTS) {
-      throw new Error('Maximum OTP attempts exceeded');
+      throw new UnauthorizedException('Maximum OTP attempts exceeded');
     }
 
-    // Verify OTP
-    const isValid = user.currentOtp === otp;
+    // Use timing-safe comparison to prevent timing attacks
+    const isValid = crypto.timingSafeEqual(
+      Buffer.from(user.currentOtp),
+      Buffer.from(otp),
+    );
 
     // Update attempts
     user.otpAttempts += 1;
 
     if (isValid) {
       // Clear OTP fields on successful validation
-      user.currentOtp = null;
-      user.otpExpiresAt = null;
+      user.currentOtp = undefined;
+      user.otpExpiresAt = undefined;
       user.otpAttempts = 0;
     }
 
@@ -68,8 +79,8 @@ export class OtpService {
   }
 
   async clearOtp(user: User): Promise<void> {
-    user.currentOtp = null;
-    user.otpExpiresAt = null;
+    user.currentOtp = undefined;
+    user.otpExpiresAt = undefined;
     user.otpAttempts = 0;
     await this.userRepository.save(user);
   }
