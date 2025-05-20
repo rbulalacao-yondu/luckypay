@@ -10,6 +10,8 @@ import { ConfigService } from '@nestjs/config';
 import { User, UserRole } from '../users/entities/user.entity';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
 import { OtpConfigDto } from './dto/otp-config.dto';
+import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
+import { SecurityLog, SecurityLogType } from './entities/security-log.entity';
 import { OtpService } from '../auth/services/otp.service';
 
 @Injectable()
@@ -17,6 +19,8 @@ export class AdminService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+    @InjectRepository(SecurityLog)
+    private readonly securityLogRepository: Repository<SecurityLog>,
     private readonly configService: ConfigService,
     private readonly otpService: OtpService,
   ) {}
@@ -148,5 +152,66 @@ export class AdminService {
       expiresAt: user.otpExpiresAt,
       attempts: user.otpAttempts,
     }));
+  }
+
+  async createSecurityLog(
+    userId: number,
+    type: SecurityLogType,
+    action: string,
+    metadata?: Record<string, any>,
+    ipAddress?: string,
+    userAgent?: string,
+  ): Promise<SecurityLog> {
+    const log = this.securityLogRepository.create({
+      userId,
+      type,
+      action,
+      metadata,
+      ipAddress,
+      userAgent,
+    });
+    return this.securityLogRepository.save(log);
+  }
+
+  async getSecurityLogs(query: QuerySecurityLogsDto): Promise<SecurityLog[]> {
+    const queryBuilder = this.securityLogRepository.createQueryBuilder('log');
+
+    if (query.type) {
+      queryBuilder.andWhere('log.type = :type', { type: query.type });
+    }
+
+    if (query.userId) {
+      queryBuilder.andWhere('log.userId = :userId', { userId: query.userId });
+    }
+
+    if (query.startDate) {
+      queryBuilder.andWhere('log.createdAt >= :startDate', {
+        startDate: query.startDate,
+      });
+    }
+
+    if (query.endDate) {
+      queryBuilder.andWhere('log.createdAt <= :endDate', {
+        endDate: query.endDate,
+      });
+    }
+
+    queryBuilder.orderBy('log.createdAt', 'DESC');
+
+    return queryBuilder.getMany();
+  }
+
+  async getSecurityLogsByType(type: SecurityLogType): Promise<SecurityLog[]> {
+    return this.securityLogRepository.find({
+      where: { type },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async getSecurityLogsByUser(userId: number): Promise<SecurityLog[]> {
+    return this.securityLogRepository.find({
+      where: { userId },
+      order: { createdAt: 'DESC' },
+    });
   }
 }

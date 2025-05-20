@@ -17,6 +17,8 @@ import { Roles } from '../auth/rbac/roles.decorator';
 import { Role } from '../auth/rbac/roles.enum';
 import { UserRole } from '../users/entities/user.entity';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
+import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
+import { SecurityLogType } from './entities/security-log.entity';
 import { OtpConfigDto } from './dto/otp-config.dto';
 
 @Controller('admin')
@@ -68,5 +70,23 @@ export class AdminController {
   @Roles(Role.SUPER_ADMIN)
   async getPendingOtps() {
     return this.adminService.getPendingOtps();
+  }
+
+  @Get('security-logs')
+  @Roles(Role.SUPER_ADMIN)
+  async getSecurityLogs(@Query() query: QuerySecurityLogsDto) {
+    return this.adminService.getSecurityLogs(query);
+  }
+
+  @Get('security-logs/type/:type')
+  @Roles(Role.SUPER_ADMIN)
+  async getSecurityLogsByType(@Param('type') type: SecurityLogType) {
+    return this.adminService.getSecurityLogsByType(type);
+  }
+
+  @Get('security-logs/user/:userId')
+  @Roles(Role.SUPER_ADMIN)
+  async getSecurityLogsByUser(@Param('userId', ParseIntPipe) userId: number) {
+    return this.adminService.getSecurityLogsByUser(userId);
   }
 }
