@@ -1,0 +1,44 @@
+Feature,User Story,Acceptance Criteria
+Mobile Number Login via OTP,"As a user, I want to log in using my mobile number and an OTP, so that I can access my wallet securely without needing a password.",User enters valid mobile number; OTP sent via SMS; OTP expires after 60 seconds; Max 5 attempts/hour; Successful login on valid OTP; Error on invalid/expired OTP.
+Session Persistence,"As a returning user, I want to stay logged in on my device, so I don’t need to re-enter OTP every time.",Session persists for 7 days; Prompts login after expiration; Multiple devices tracked and limited.
+View Wallet Balance,"As a user, I want to see my current wallet balance, so I know how much I can use on machines.",Wallet balance is visible; Updates in real time; Includes returned credits.
+Cash In via GCash,"As a user, I want to cash in using GCash, so that I can load funds to my wallet conveniently.",Top-Up initiates GCash flow; Redirects to GCash; Wallet updates post-confirmation; Shows success/failure; Enforces daily limit.
+View Wallet Transaction History,"As a user, I want to view all my GCash top-ups and wallet activity, so I can track my spending.","Shows list with timestamp, amount, GCash ID, status; Can filter by date."
+Connect to Machine via QR/NFC,"As a user, I want to link my wallet to a casino machine using QR or NFC, so I can transfer credits directly.",App prompts QR/NFC; Creates session; Displays machine ID and session time; Only one session allowed.
+Send Credits to Machine,"As a user, I want to transfer credits from my wallet to the machine, so I can start playing.",Enter amount; Wallet debited; Machine credited; Enforces limits.
+View Active Session,"As a user, I want to see my current machine session, so I can track how much I’m spending.","Shows machine ID, credits, time; Option to end."
+Pull Credits from Machine,"As a user, I want to retrieve unused credits from the machine back to my wallet, so I don’t lose my remaining balance.",Allows manual/auto session end; Returns unused credits; Confirms success; Logs transaction.
+Receive Notifications,"As a user, I want to get real-time alerts for transactions and sessions, so I stay informed.","Alerts for top-up, credit sent, session end; Push/SMS optional."
+Earn Points for Top-Ups,"As a user, I want to earn loyalty points when I cash in, so I feel rewarded for my activity.","Precondition: User must be registered
+
+Earn 1 pt/₱10000; Points shown in dashboard; Update instantly."
+Earn Points for Playing,"As a user, I want to earn loyalty points when I play, so I feel rewarded for my activity.","Precondition: User must be registered
+
+Earn 1 pt/50 spins; Points shown in dashboard; Update instantly."
+Redeem Points for Rewards,"As a user, I want to redeem points for credits or gifts, so I get value from my loyalty.",List rewards; Redeem reduces points; Physical rewards show status.
+View Loyalty Tier,"As a user, I want to see my current loyalty tier, so I understand what benefits I receive.","Shows tier (Bronze, etc.); Badge in profile; Next tier rules shown."
+OTP Rate Limiting and Expiry,"As the system, I want to restrict OTP resends and validate expiry, so that I prevent abuse or fraud.",OTP expires in 60s; Max 5/hr; Countdown for resend.
+Encrypted Transactions,"As the system, I want all data transmissions to be encrypted, so that sensitive payment and session information is secure.",Uses HTTPS; GCash API uses tokens; Sessions encrypted.
+Admin Login,"As an admin, I want to log in securely with a username and password, so that I can access the admin dashboard.",Admin enters valid credentials; Access granted on match; Invalid attempts blocked after 5 tries; Session times out after 15 mins of inactivity.
+Role-Based Access Control,"As a super admin, I want to assign different roles to team members, so that they only access features relevant to their job.","Roles include Super Admin, Finance Admin, Operator, Loyalty Manager; Permissions enforced per module; Admins cannot exceed their role access."
+View Dashboard Overview,"As an admin, I want to see a summary of key metrics, so I can quickly assess app performance.","Metrics show cash-ins, active users, sessions, loyalty points; Auto-refresh every 10 seconds."
+View Visual Charts,"As an admin, I want visual charts for trends, so I can analyze app usage over time.","Charts show cash-in trend, machine activity, top users; Filters for day/week/month."
+View GCash Transactions,"As a finance admin, I want to view GCash top-ups with details, so I can audit incoming funds.","Logs show user ID (masked), GCash ref ID, amount, timestamp; Searchable and filterable."
+Export GCash Reports,"As an admin, I want to export transaction data, so I can use it for accounting or reporting.","Export in CSV, PDF, XLSX; Filter range included in export."
+Manual Wallet Adjustment,"As an admin, I want to credit or debit user wallets manually, so I can resolve errors or promo credits.","Form with amount, reason; Adjustment logs stored with admin ID."
+View Live Machine Sessions,"As an operator, I want to see current sessions, so I can monitor real-time activity.","Sessions list machine ID, user, time, credits; Updates live."
+View Session History,"As an admin, I want to review past machine sessions, so I can analyze performance or resolve disputes.",Searchable by machine/user/date; Displays session duration and credit flow.
+Monitor Machine Health,"As an admin, I want to know if machines are online or offline, so I can respond to outages.",Dashboard shows machine status and last active time.
+Search Users by Mobile,"As an admin, I want to look up users by mobile number, so I can view their activity or help with issues.","Search returns profile, wallet, session logs."
+Suspend/Unsuspend User,"As an admin, I want to freeze or unfreeze user accounts, so I can enforce rules or handle problems.",Suspended users can't use wallet or connect to machines; Status visible in profile.
+Force Session Termination,"As an admin, I want to end stuck sessions, so that machines become available again.","Force-disconnect ends session, returns credits; Logs action with admin ID."
+Configure Loyalty Rules,"As a loyalty manager, I want to set how users earn and redeem points, so I can run promotions effectively.","Fields to set point/₱ value, redemption rate, tier rules; Changes apply instantly."
+Manage Rewards Catalog,"As an admin, I want to edit rewards available for point redemption, so I can offer the right incentives.","Add/edit/remove items with image, point value, inventory."
+Approve Redemption Requests,"As an admin, I want to view and approve reward redemptions, so I can fulfill user rewards efficiently.","List of redemptions with user info, item, status; Actions: Approve/Reject."
+Audit Loyalty Transactions,"As an admin, I want to see all point transactions, so I can track loyalty activity and spot issues.","Logs show earn/redeem date, amount, user, admin override."
+Generate Usage Reports,"As an admin, I want reports on cash-ins, loyalty, and sessions, so I can analyze usage patterns.","Custom date range; Graphs, totals, CSV export."
+Set Global Limits,"As an admin, I want to configure top-up and session limits, so I can manage risk and compliance.","Fields for daily cap, per txn cap, per session credit max."
+Manage OTP Policy,"As an admin, I want to configure OTP expiry and resend limits, so I can balance usability and security.","Fields for OTP duration, max resends, cooldown."
+Enable Maintenance Mode,"As a super admin, I want to toggle maintenance mode, so I can safely update the system.",Maintenance status shown in frontend; Banner message editable.
+Receive System Alerts,"As an admin, I want to get notified of errors or suspicious activity, so I can react immediately.","Alerts for failed top-ups, unusual spending, machine issues."
+View Admin Activity Logs,"As a super admin, I want to see all admin actions, so I can audit usage and ensure accountability.","Logs show admin ID, timestamp, action, affected object (e.g., session, user)."
