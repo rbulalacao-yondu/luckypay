@@ -1,8 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import DashboardLayout from './components/layout/DashboardLayout';
 import { Dashboard } from './pages';
+import Users from './pages/Users';
+import OtpManagement from './pages/OtpManagement';
+import SecurityLogs from './pages/SecurityLogs';
 
 const queryClient = new QueryClient();
 
@@ -17,32 +22,21 @@ const theme = createTheme({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<DashboardLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route
-                path="users"
-                element={<div>Users Page (Coming Soon)</div>}
-              />
-              <Route
-                path="security-logs"
-                element={<div>Security Logs (Coming Soon)</div>}
-              />
-              <Route
-                path="loyalty"
-                element={<div>Loyalty Program (Coming Soon)</div>}
-              />
-              <Route
-                path="settings"
-                element={<div>Settings (Coming Soon)</div>}
-              />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </ThemeProvider>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<DashboardLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="users" element={<Users />} />
+                <Route path="otp-management" element={<OtpManagement />} />
+                <Route path="security-logs" element={<SecurityLogs />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </LocalizationProvider>
     </QueryClientProvider>
   );
 }

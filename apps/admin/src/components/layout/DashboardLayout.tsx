@@ -20,7 +20,7 @@ import {
   Dashboard as DashboardIcon,
   People as PeopleIcon,
   Security as SecurityIcon,
-  Loyalty as LoyaltyIcon,
+  Key as KeyIcon,
   Settings as SettingsIcon,
 } from '@mui/icons-material';
 import { Link, Outlet } from 'react-router-dom';
@@ -56,8 +56,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
   { text: 'Users', icon: <PeopleIcon />, path: '/users' },
+  { text: 'OTP Management', icon: <KeyIcon />, path: '/otp-management' },
   { text: 'Security Logs', icon: <SecurityIcon />, path: '/security-logs' },
-  { text: 'Loyalty Program', icon: <LoyaltyIcon />, path: '/loyalty' },
   { text: 'Settings', icon: <SettingsIcon />, path: '/settings' },
 ];
 
