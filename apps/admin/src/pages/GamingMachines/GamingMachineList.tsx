@@ -58,8 +58,8 @@ const GamingMachineList: React.FC = () => {
       key: 'playerLimits',
       render: (record: GamingMachine) => (
         <Space direction="vertical" size="small">
-          <span>Min: ${record.playerLimits.minBet}</span>
-          <span>Max: ${record.playerLimits.maxBet}</span>
+          <span>Min: ₱{record.playerLimits.minBet}</span>
+          <span>Max: ₱{record.playerLimits.maxBet}</span>
         </Space>
       ),
     },

@@ -12,6 +12,7 @@ import {
   GamingMachineList,
   GamingMachineDetails,
 } from './pages/GamingMachines';
+import { PlayersList, PlayerDetails } from './pages/Players';
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,8 @@ function App() {
             >
               <Route index element={<Dashboard />} />
               <Route path="users" element={<Users />} />
+              <Route path="players" element={<PlayersList />} />
+              <Route path="players/:id" element={<PlayerDetails />} />
               <Route path="otp-management" element={<OtpManagement />} />
               <Route path="security-logs" element={<SecurityLogs />} />
               <Route path="settings" element={<Settings />} />

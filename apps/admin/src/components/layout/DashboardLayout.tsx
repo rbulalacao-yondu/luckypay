@@ -19,6 +19,7 @@ import {
 const menuItems = [
   { text: 'Dashboard', icon: HomeIcon, path: '/' },
   { text: 'Users', icon: UsersIcon, path: '/users' },
+  { text: 'Players', icon: UsersIcon, path: '/players' },
   {
     text: 'Gaming Machines',
     icon: ComputerDesktopIcon,

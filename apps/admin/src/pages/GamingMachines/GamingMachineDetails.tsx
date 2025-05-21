@@ -85,8 +85,8 @@ const GamingMachineDetails: React.FC = () => {
             </Descriptions.Item>
             <Descriptions.Item label="Player Limits">
               <Space direction="vertical">
-                <span>Minimum Bet: ${machine.playerLimits.minBet}</span>
-                <span>Maximum Bet: ${machine.playerLimits.maxBet}</span>
+                <span>Minimum Bet: ₱{machine.playerLimits.minBet}</span>
+                <span>Maximum Bet: ₱{machine.playerLimits.maxBet}</span>
               </Space>
             </Descriptions.Item>
             <Descriptions.Item label="Firmware Version">
