@@ -4,6 +4,14 @@ import {
   PencilIcon,
   NoSymbolIcon,
   CheckCircleIcon,
+  UserGroupIcon,
+  EyeIcon,
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+  ExclamationCircleIcon,
+  EnvelopeIcon,
+  CalendarIcon,
+  UserIcon,
 } from '@heroicons/react/24/outline';
 
 export default function Users() {
@@ -16,7 +24,7 @@ export default function Users() {
     updateRole.mutate({ userId, role: newRole });
   };
 
-  const handleChangePage = (_: unknown, newPage: number) => {
+  const handleChangePage = (newPage: number) => {
     setPage(newPage);
   };
 
@@ -37,19 +45,36 @@ export default function Users() {
 
   if (error) {
     return (
-      <div className="p-4">
-        <p className="text-error font-medium">
-          Error loading users: {(error as Error).message || 'Unknown error'}
-        </p>
+      <div className="p-6">
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center">
+          <ExclamationCircleIcon className="h-5 w-5 mr-2" />
+          <span>
+            Error loading users: {(error as Error).message || 'Unknown error'}
+          </span>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-6">User Management</h1>
+    <div className="p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold flex items-center">
+          <UserGroupIcon className="h-7 w-7 mr-2 text-primary" />
+          User Management
+        </h1>
+        <div className="flex items-center">
+          <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium mr-2">
+            {users?.length || 0} Total Users
+          </span>
+          <button className="flex items-center text-sm bg-primary text-white px-3 py-1.5 rounded-md hover:bg-primary-dark transition-colors">
+            <UserIcon className="h-4 w-4 mr-1" />
+            Add User
+          </button>
+        </div>
+      </div>
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
@@ -91,47 +116,84 @@ export default function Users() {
                 ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
                   <tr key={user.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {user.email}
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                        <div className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                          {user.email.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-900 flex items-center">
+                            {user.email}
+                            <EnvelopeIcon className="h-4 w-4 ml-1 text-gray-400" />
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            ID: {user.id.substring(0, 8)}...
+                          </div>
+                        </div>
+                      </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap">
                       <select
                         value={user.role}
                         onChange={(e) =>
                           handleRoleChange(user.id, e.target.value)
                         }
-                        className="block w-full py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+                        className="block w-full py-1.5 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary text-sm"
                       >
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                         <option value="support">Support</option>
                       </select>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`px-2 inline-flex text-xs leading-5 font-medium rounded-full ${
+                        className={`px-3 py-1 inline-flex text-xs leading-5 font-medium rounded-full ${
                           user.isActive
-                            ? 'bg-green-100 text-green-800'
-                            : 'bg-red-100 text-red-800'
+                            ? 'bg-green-100 text-green-800 border border-green-200'
+                            : 'bg-red-100 text-red-800 border border-red-200'
                         }`}
                       >
+                        {user.isActive ? (
+                          <CheckCircleIcon className="h-4 w-4 mr-1" />
+                        ) : (
+                          <NoSymbolIcon className="h-4 w-4 mr-1" />
+                        )}
                         {user.isActive ? 'Active' : 'Inactive'}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {new Date(user.createdAt).toLocaleDateString()}
+                      <div className="flex items-center">
+                        <CalendarIcon className="h-4 w-4 mr-1 text-gray-400" />
+                        {new Date(user.createdAt).toLocaleDateString()}
+                      </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 space-x-1">
-                      <button className="text-primary hover:text-primary-dark p-1 rounded-full hover:bg-gray-100">
-                        <PencilIcon className="h-5 w-5" />
-                      </button>
-                      <button className="text-primary hover:text-primary-dark p-1 rounded-full hover:bg-gray-100">
-                        {user.isActive ? (
-                          <NoSymbolIcon className="h-5 w-5" />
-                        ) : (
-                          <CheckCircleIcon className="h-5 w-5" />
-                        )}
-                      </button>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <div className="flex space-x-2">
+                        <button
+                          className="p-1.5 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
+                          title="Edit User"
+                        >
+                          <PencilIcon className="h-4 w-4" />
+                        </button>
+                        <button
+                          className="p-1.5 rounded-full bg-green-50 text-green-600 hover:bg-green-100 transition-colors"
+                          title="View Details"
+                        >
+                          <EyeIcon className="h-4 w-4" />
+                        </button>
+                        <button
+                          className="p-1.5 rounded-full bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
+                          title={
+                            user.isActive ? 'Deactivate User' : 'Activate User'
+                          }
+                        >
+                          {user.isActive ? (
+                            <NoSymbolIcon className="h-4 w-4" />
+                          ) : (
+                            <CheckCircleIcon className="h-4 w-4" />
+                          )}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -142,7 +204,7 @@ export default function Users() {
         <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
           <div className="flex-1 flex justify-between sm:hidden">
             <button
-              onClick={() => handleChangePage(null, page - 1)}
+              onClick={() => handleChangePage(page - 1)}
               disabled={page === 0}
               className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
                 page === 0
@@ -153,7 +215,7 @@ export default function Users() {
               Previous
             </button>
             <button
-              onClick={() => handleChangePage(null, page + 1)}
+              onClick={() => handleChangePage(page + 1)}
               disabled={(page + 1) * rowsPerPage >= (users?.length || 0)}
               className={`ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
                 (page + 1) * rowsPerPage >= (users?.length || 0)
@@ -164,6 +226,7 @@ export default function Users() {
               Next
             </button>
           </div>
+
           <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
               <p className="text-sm text-gray-700">
@@ -176,95 +239,68 @@ export default function Users() {
                 results
               </p>
             </div>
-            <div>
-              <div className="flex items-center">
-                <select
-                  className="mr-2 block w-full py-1 px-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
-                  value={rowsPerPage}
-                  onChange={handleChangeRowsPerPage}
-                >
-                  {[5, 10, 25].map((option) => (
-                    <option key={option} value={option}>
-                      {option} per page
-                    </option>
-                  ))}
-                </select>
+            <div className="flex items-center space-x-4">
+              <select
+                className="block w-full py-1.5 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary text-sm"
+                value={rowsPerPage}
+                onChange={handleChangeRowsPerPage}
+              >
+                {[5, 10, 25].map((option) => (
+                  <option key={option} value={option}>
+                    {option} per page
+                  </option>
+                ))}
+              </select>
 
-                <nav
-                  className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                  aria-label="Pagination"
+              <nav
+                className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                aria-label="Pagination"
+              >
+                <button
+                  onClick={() => handleChangePage(page - 1)}
+                  disabled={page === 0}
+                  className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${
+                    page === 0
+                      ? 'text-gray-300'
+                      : 'text-gray-500 hover:bg-gray-50'
+                  }`}
                 >
+                  <span className="sr-only">Previous</span>
+                  <ArrowLongLeftIcon className="h-5 w-5" />
+                </button>
+
+                {Array.from({
+                  length: Math.min(
+                    5,
+                    Math.ceil((users?.length || 0) / rowsPerPage),
+                  ),
+                }).map((_, idx) => (
                   <button
-                    onClick={() => handleChangePage(null, page - 1)}
-                    disabled={page === 0}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${
-                      page === 0
-                        ? 'text-gray-300'
+                    key={idx}
+                    onClick={() => handleChangePage(idx)}
+                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium ${
+                      page === idx
+                        ? 'z-10 bg-primary text-white border-primary'
                         : 'text-gray-500 hover:bg-gray-50'
                     }`}
                   >
-                    <span className="sr-only">Previous</span>
-                    <svg
-                      className="h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    {idx + 1}
                   </button>
+                ))}
 
-                  {[
-                    ...Array(
-                      Math.ceil((users?.length || 0) / rowsPerPage),
-                    ).keys(),
-                  ]
-                    .slice(0, 5)
-                    .map((num) => (
-                      <button
-                        key={num}
-                        onClick={() => handleChangePage(null, num)}
-                        className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium ${
-                          page === num
-                            ? 'z-10 bg-primary text-white border-primary'
-                            : 'text-gray-500 hover:bg-gray-50'
-                        }`}
-                      >
-                        {num + 1}
-                      </button>
-                    ))}
-
-                  <button
-                    onClick={() => handleChangePage(null, page + 1)}
-                    disabled={(page + 1) * rowsPerPage >= (users?.length || 0)}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${
-                      (page + 1) * rowsPerPage >= (users?.length || 0)
-                        ? 'text-gray-300'
-                        : 'text-gray-500 hover:bg-gray-50'
-                    }`}
-                  >
-                    <span className="sr-only">Next</span>
-                    <svg
-                      className="h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+                <button
+                  onClick={() => handleChangePage(page + 1)}
+                  disabled={(page + 1) * rowsPerPage >= (users?.length || 0)}
+                  className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${
+                    (page + 1) * rowsPerPage >= (users?.length || 0)
+                      ? 'text-gray-300'
+                      : 'text-gray-500 hover:bg-gray-50'
+                  }`}
+                >
+                  <span className="sr-only">Next</span>
+                  <ArrowLongRightIcon className="h-5 w-5" />
+                </button>
+              </nav>
             </div>
           </div>
         </div>
