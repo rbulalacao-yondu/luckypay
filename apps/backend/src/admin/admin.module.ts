@@ -4,7 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { AdminService } from './admin.service';
 import { AdminController } from './admin.controller';
 import { User } from '../users/entities/user.entity';
-import { SecurityLog } from './entities/security-log.entity';
 import { GamingMachine } from './entities/gaming-machine.entity';
 import { CashIn } from './entities/cash-in.entity';
 import { CoinIn } from './entities/coin-in.entity';
@@ -17,13 +16,7 @@ import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([
-      User,
-      SecurityLog,
-      GamingMachine,
-      CashIn,
-      CoinIn,
-    ]),
+    TypeOrmModule.forFeature([User, GamingMachine, CashIn, CoinIn]),
     ConfigModule,
     AuthModule,
   ],

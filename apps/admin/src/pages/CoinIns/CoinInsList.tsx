@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import type { CoinIn } from '../../types/CoinIn';
 import type { GamingMachine } from '../../types/GamingMachine';
+import type { User } from '../../types/User';
 
 const { RangePicker } = DatePicker;
 
@@ -70,7 +71,7 @@ const CoinInsList: React.FC = () => {
       title: 'User',
       dataIndex: 'user',
       key: 'user',
-      render: (user: any) => {
+      render: (user: User) => {
         if (!user) return 'N/A';
         const fullName = [user.firstName, user.lastName]
           .filter(Boolean)
@@ -82,7 +83,7 @@ const CoinInsList: React.FC = () => {
       title: 'Machine',
       dataIndex: 'machine',
       key: 'machine',
-      render: (machine: any) => machine?.model || 'N/A',
+      render: (machine: GamingMachine) => machine?.model || 'N/A',
     },
     {
       title: 'Game Type',
@@ -93,7 +94,7 @@ const CoinInsList: React.FC = () => {
       title: 'Amount',
       dataIndex: 'amount',
       key: 'amount',
-      render: (amount: any) => {
+      render: (amount: number) => {
         const value = Number(amount);
         return isNaN(value) ? '₱0.00' : `₱${value.toFixed(2)}`;
       },
@@ -102,7 +103,7 @@ const CoinInsList: React.FC = () => {
       title: 'Machine Balance',
       dataIndex: 'machineBalance',
       key: 'machineBalance',
-      render: (balance: any) => {
+      render: (balance: number) => {
         const value = Number(balance);
         return isNaN(value) ? '₱0.00' : `₱${value.toFixed(2)}`;
       },

@@ -1,13 +1,9 @@
-import {
-  Injectable,
-  NotFoundException,
-  ForbiddenException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcrypt';
-import { User, UserRole } from '../users/entities/user.entity';
+import { User, UserRole, UserStatus } from '../users/entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
@@ -26,7 +22,6 @@ export class AdminService {
     private readonly configService: ConfigService,
   ) {}
 
-  // User Management Methods
   async getAllUsers(): Promise<User[]> {
     return this.userRepository.find({
       select: [
@@ -168,6 +163,222 @@ export class AdminService {
     return adminLevel > currentLevel && adminLevel > newLevel;
   }
 
+  async getOtpSettings() {
+    return {
+      expiryMinutes: this.configService.get<number>('otpExpiryMinutes'),
+      maxAttempts: this.configService.get<number>('maxOtpAttempts'),
+    };
+  }
+
+  async updateOtpSettings(config: OtpConfigDto) {
+    if (config.expiryMinutes) {
+      process.env.OTP_EXPIRY_MINUTES = config.expiryMinutes.toString();
+    }
+    if (config.maxAttempts) {
+      process.env.MAX_OTP_ATTEMPTS = config.maxAttempts.toString();
+    }
+    return this.getOtpSettings();
+  }
+
+  async revokeUserOtp(userId: number): Promise<void> {
+    const user = await this.userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!user) {
+      throw new NotFoundException(`User with ID ${userId} not found`);
+    }
+
+    await this.otpService.clearOtp(user);
+  }
+
+  async getPendingOtps() {
+    const users = await this.userRepository.find({
+      where: {
+        currentOtp: Not(IsNull()),
+        otpExpiresAt: MoreThan(new Date()),
+      },
+      select: ['id', 'mobileNumber', 'otpExpiresAt', 'otpAttempts'],
+    });
+
+    return users.map((user) => ({
+      userId: user.id,
+      mobileNumber: user.mobileNumber,
+      expiresAt: user.otpExpiresAt,
+      attempts: user.otpAttempts,
+    }));
+  }
+
+  async createSecurityLog(
+    userId: number,
+    type: SecurityLogType,
+    action: string,
+    metadata?: Record<string, any>,
+    ipAddress?: string,
+    userAgent?: string,
+  ): Promise<SecurityLog> {
+    const log = this.securityLogRepository.create({
+      userId,
+      type,
+      action,
+      metadata,
+      ipAddress,
+      userAgent,
+    });
+    return this.securityLogRepository.save(log);
+  }
+
+  async getSecurityLogs(query: QuerySecurityLogsDto): Promise<SecurityLog[]> {
+    const queryBuilder = this.securityLogRepository.createQueryBuilder('log');
+
+    if (query.type) {
+      queryBuilder.andWhere('log.type = :type', { type: query.type });
+    }
+
+    if (query.userId) {
+      queryBuilder.andWhere('log.userId = :userId', { userId: query.userId });
+    }
+
+    if (query.startDate) {
+      queryBuilder.andWhere('log.createdAt >= :startDate', {
+        startDate: query.startDate,
+      });
+    }
+
+    if (query.endDate) {
+      queryBuilder.andWhere('log.createdAt <= :endDate', {
+        endDate: query.endDate,
+      });
+    }
+
+    queryBuilder.orderBy('log.createdAt', 'DESC');
+
+    return queryBuilder.getMany();
+  }
+
+  async getSecurityLogsByType(type: SecurityLogType): Promise<SecurityLog[]> {
+    return this.securityLogRepository.find({
+      where: { type },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async getSecurityLogsByUser(userId: number): Promise<SecurityLog[]> {
+    return this.securityLogRepository.find({
+      where: { userId },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  // Transaction Management Methods
+  async getTransactionOverview(): Promise<any> {
+    // TODO: Implement transaction overview logic
+    return {
+      totalTransactions: 0,
+      totalVolume: 0,
+      averageTransaction: 0,
+      recentTransactions: [],
+    };
+  }
+
+  async getTransactionStats(startDate: Date, endDate: Date): Promise<any> {
+    // TODO: Implement transaction statistics logic
+    return {
+      dailyVolume: [],
+      transactionTypes: {
+        topup: 0,
+        withdrawal: 0,
+        transfer: 0,
+      },
+      successRate: 0,
+    };
+  }
+
+  // Loyalty Program Management Methods
+  async getLoyaltyProgramSettings(): Promise<any> {
+    // TODO: Implement loyalty settings retrieval
+    return {
+      tiers: [
+        {
+          name: 'Bronze',
+          pointThreshold: 0,
+          benefits: [],
+        },
+        {
+          name: 'Silver',
+          pointThreshold: 1000,
+          benefits: [],
+        },
+        {
+          name: 'Gold',
+          pointThreshold: 5000,
+          benefits: [],
+        },
+      ],
+      pointsPerPeso: 1,
+      expiryDays: 365,
+    };
+  }
+
+  async updateLoyaltyProgramSettings(settings: any): Promise<any> {
+    // TODO: Implement loyalty settings update
+    return {
+      success: true,
+      message: 'Loyalty program settings updated successfully',
+      settings,
+    };
+  }
+
+  async getLoyaltyMetrics(): Promise<any> {
+    // TODO: Implement loyalty metrics retrieval
+    return {
+      totalActiveMembers: 0,
+      tierDistribution: {
+        Bronze: 0,
+        Silver: 0,
+        Gold: 0,
+      },
+      totalPointsIssued: 0,
+      totalPointsRedeemed: 0,
+    };
+  }
+
+  async getPlayers() {
+    return this.userRepository.find({
+      where: { role: UserRole.USER },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async searchPlayers(query: string) {
+    if (!query) return this.getPlayers();
+
+    return this.userRepository
+      .createQueryBuilder('user')
+      .where('user.role = :role', { role: UserRole.USER })
+      .andWhere(
+        '(LOWER(user.firstName) LIKE LOWER(:query) OR ' +
+          'LOWER(user.lastName) LIKE LOWER(:query) OR ' +
+          'LOWER(user.email) LIKE LOWER(:query) OR ' +
+          'user.mobileNumber LIKE :query)',
+        { query: `%${query}%` },
+      )
+      .orderBy('user.createdAt', 'DESC')
+      .getMany();
+  }
+
+  async getPlayer(id: number) {
+    const player = await this.userRepository.findOne({
+      where: { id, role: UserRole.USER },
+    });
+
+    if (!player) {
+      throw new NotFoundException(`Player with ID ${id} not found`);
+    }
+
+    return player;
+  }
+
   // Cash-in Management Methods
   async getCashIns() {
     return this.cashInRepository.find({
@@ -203,7 +414,6 @@ export class AdminService {
     return cashIn;
   }
 
-  // Coin-in Management Methods
   async findAllCoinIns({
     page = 1,
     limit = 10,
@@ -264,78 +474,5 @@ export class AdminService {
       where: { id },
       relations: ['user', 'machine'],
     });
-  }
-
-  // Player Management Methods
-  async getPlayers(): Promise<User[]> {
-    return this.userRepository.find({
-      where: { role: UserRole.USER },
-      select: [
-        'id',
-        'email',
-        'mobileNumber',
-        'firstName',
-        'lastName',
-        'status',
-        'walletBalance',
-        'loyaltyTier',
-        'loyaltyPoints',
-        'lastLoginAt',
-      ],
-    });
-  }
-
-  async searchPlayers(query: string): Promise<User[]> {
-    if (!query) return this.getPlayers();
-
-    return this.userRepository
-      .createQueryBuilder('user')
-      .where('user.role = :role', { role: UserRole.USER })
-      .andWhere(
-        '(user.firstName LIKE :query OR user.lastName LIKE :query OR user.mobileNumber LIKE :query OR user.email LIKE :query)',
-        { query: `%${query}%` },
-      )
-      .select([
-        'user.id',
-        'user.email',
-        'user.mobileNumber',
-        'user.firstName',
-        'user.lastName',
-        'user.status',
-        'user.walletBalance',
-        'user.loyaltyTier',
-        'user.loyaltyPoints',
-        'user.lastLoginAt',
-      ])
-      .getMany();
-  }
-
-  async getPlayer(id: number): Promise<User> {
-    const player = await this.userRepository.findOne({
-      where: { id, role: UserRole.USER },
-      select: [
-        'id',
-        'email',
-        'mobileNumber',
-        'firstName',
-        'lastName',
-        'status',
-        'walletBalance',
-        'loyaltyTier',
-        'loyaltyPoints',
-        'lastLoginAt',
-        'isMobileVerified',
-        'isEmailVerified',
-        'createdAt',
-        'updatedAt',
-        'address',
-        'dateOfBirth',
-      ],
-    });
-
-    if (!player) {
-      throw new NotFoundException(`Player with ID ${id} not found`);
-    }
-    return player;
   }
 }

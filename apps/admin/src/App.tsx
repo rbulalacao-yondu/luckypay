@@ -4,9 +4,7 @@ import DashboardLayout from './components/layout/DashboardLayout';
 import AuthLayout from './components/layout/AuthLayout';
 import { Dashboard } from './pages';
 import Login from './pages/Login';
-import Users from './pages/Users';
-import OtpManagement from './pages/OtpManagement';
-import SecurityLogs from './pages/SecurityLogs';
+import { UsersList, UserDetails, UserCreate, UserEdit } from './pages/Users';
 import Settings from './pages/Settings';
 import {
   GamingMachineList,
@@ -36,13 +34,14 @@ function App() {
               }
             >
               <Route index element={<Dashboard />} />
-              <Route path="users" element={<Users />} />
+              <Route path="users" element={<UsersList />} />
+              <Route path="users/create" element={<UserCreate />} />
+              <Route path="users/:id" element={<UserDetails />} />
+              <Route path="users/:id/edit" element={<UserEdit />} />
               <Route path="players" element={<PlayersList />} />
               <Route path="players/:id" element={<PlayerDetails />} />
               <Route path="cash-ins" element={<CashInsList />} />
               <Route path="cash-ins/:id" element={<CashInDetails />} />
-              <Route path="otp-management" element={<OtpManagement />} />
-              <Route path="security-logs" element={<SecurityLogs />} />
               <Route path="settings" element={<Settings />} />
               <Route path="gaming-machines" element={<GamingMachineList />} />
               <Route

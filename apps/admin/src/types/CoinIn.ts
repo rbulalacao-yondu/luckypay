@@ -1,5 +1,5 @@
-import { User } from './User';
-import { GamingMachine } from './GamingMachine';
+import type { User } from './User';
+import type { GamingMachine } from './GamingMachine';
 
 export interface CoinIn {
   id: string;

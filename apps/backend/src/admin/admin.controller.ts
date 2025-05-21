@@ -1,6 +1,7 @@
 import {
   Controller,
   Get,
+  Post,
   Put,
   Delete,
   Body,
@@ -16,12 +17,9 @@ import { RolesGuard } from '../auth/rbac/roles.guard';
 import { Roles } from '../auth/rbac/roles.decorator';
 import { Role } from '../auth/rbac/roles.enum';
 import { UserRole } from '../users/entities/user.entity';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
-import { OtpConfigDto } from './dto/otp-config.dto';
-import { UpdateLoyaltySettingsDto } from './dto/update-loyalty-settings.dto';
-import { TransactionQueryDto } from './dto/transaction-query.dto';
-import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
-import { SecurityLogType } from './entities/security-log.entity';
 
 @Controller('admin')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -57,53 +55,8 @@ export class AdminController {
     return this.adminService.updateUserRole(updateUserRoleDto, req.user.role);
   }
 
-  @Get('otp/settings')
-  @Roles(Role.SUPER_ADMIN)
-  async getOtpSettings() {
-    return this.adminService.getOtpSettings();
-  }
-
-  @Put('otp/settings')
-  @Roles(Role.SUPER_ADMIN)
-  async updateOtpSettings(@Body() config: OtpConfigDto) {
-    return this.adminService.updateOtpSettings(config);
-  }
-
-  @Delete('otp/:userId')
-  @Roles(Role.SUPER_ADMIN)
-  async revokeUserOtp(@Param('userId', ParseIntPipe) userId: number) {
-    await this.adminService.revokeUserOtp(userId);
-    return { message: 'OTP revoked successfully' };
-  }
-
-  @Get('otp/pending')
-  @Roles(Role.SUPER_ADMIN)
-  async getPendingOtps() {
-    return this.adminService.getPendingOtps();
-  }
-
-  @Get('security-logs')
-  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
-  async getSecurityLogs(@Query() query: QuerySecurityLogsDto) {
-    console.log('Accessing security logs with query:', query);
-    return this.adminService.getSecurityLogs(query);
-  }
-
-  @Get('security-logs/type/:type')
-  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
-  async getSecurityLogsByType(@Param('type') type: SecurityLogType) {
-    console.log('Accessing security logs by type:', type);
-    return this.adminService.getSecurityLogsByType(type);
-  }
-
-  @Get('security-logs/user/:userId')
-  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
-  async getSecurityLogsByUser(@Param('userId', ParseIntPipe) userId: number) {
-    console.log('Accessing security logs for user:', userId);
-    return this.adminService.getSecurityLogsByUser(userId);
-  }
-
   // Transaction Management Endpoints
+  /*
   @Get('transactions/overview')
   @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
   async getTransactionOverview() {
@@ -119,9 +72,10 @@ export class AdminController {
         : new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
       query.endDate ? new Date(query.endDate) : new Date(),
     );
-  }
+  }*/
 
   // Loyalty Program Management Endpoints
+  /*
   @Get('loyalty/settings')
   @Roles(Role.SUPER_ADMIN, Role.LOYALTY_MANAGER)
   async getLoyaltyProgramSettings() {
@@ -140,5 +94,37 @@ export class AdminController {
   @Roles(Role.SUPER_ADMIN, Role.LOYALTY_MANAGER)
   async getLoyaltyMetrics() {
     return this.adminService.getLoyaltyMetrics();
+  }*/
+
+  @Get('users/:id')
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
+  async getUser(@Param('id', ParseIntPipe) id: number) {
+    console.log('Accessing getUser endpoint for id:', id);
+    return this.adminService.getUser(id);
+  }
+
+  @Post('users')
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
+  async createUser(@Body() createUserDto: CreateUserDto) {
+    console.log('Creating new user:', createUserDto);
+    return this.adminService.createUser(createUserDto);
+  }
+
+  @Put('users/:id')
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
+  async updateUser(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateUserDto: UpdateUserDto,
+  ) {
+    console.log('Updating user:', id, updateUserDto);
+    return this.adminService.updateUser(id, updateUserDto);
+  }
+
+  @Delete('users/:id')
+  @Roles(Role.SUPER_ADMIN)
+  async deleteUser(@Param('id', ParseIntPipe) id: number) {
+    console.log('Deleting user:', id);
+    await this.adminService.deleteUser(id);
+    return { message: 'User deleted successfully' };
   }
 }

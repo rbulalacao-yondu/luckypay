@@ -8,9 +8,10 @@ import dayjs from 'dayjs';
 export default function CoinInDetails() {
   const { id } = useParams<{ id: string }>();
 
-  const { data: coinIn, isLoading } = useQuery(['coinIn', id], () =>
-    coinInService.getById(id!),
-  );
+  const { data: coinIn, isLoading } = useQuery({
+    queryKey: ['coinIn', id],
+    queryFn: () => coinInService.getById(id!),
+  });
 
   if (isLoading) {
     return (
@@ -38,10 +39,14 @@ export default function CoinInDetails() {
       <Descriptions bordered column={2}>
         <Descriptions.Item label="ID">{coinIn.id}</Descriptions.Item>
         <Descriptions.Item label="User">
-          {coinIn.user?.username || 'N/A'}
+          {coinIn.user
+            ? [coinIn.user.firstName, coinIn.user.lastName]
+                .filter(Boolean)
+                .join(' ') || coinIn.user.mobileNumber
+            : 'N/A'}
         </Descriptions.Item>
         <Descriptions.Item label="Machine">
-          {coinIn.machine?.name || 'N/A'}
+          {coinIn.machine?.model || 'N/A'}
         </Descriptions.Item>
         <Descriptions.Item label="Game Type">
           {coinIn.gameType}

@@ -1,5 +1,5 @@
 import api from './api';
-import { CoinIn } from '../types/CoinIn';
+import type { CoinIn } from '../types/CoinIn';
 
 export const coinInService = {
   getAll: async (params: {
