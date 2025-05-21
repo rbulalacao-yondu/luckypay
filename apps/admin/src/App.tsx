@@ -4,7 +4,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import DashboardLayout from './components/layout/DashboardLayout';
+import AuthLayout from './components/layout/AuthLayout';
 import { Dashboard } from './pages';
+import Login from './pages/Login';
 import Users from './pages/Users';
 import OtpManagement from './pages/OtpManagement';
 import SecurityLogs from './pages/SecurityLogs';
@@ -26,7 +28,15 @@ function App() {
         <ThemeProvider theme={theme}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<DashboardLayout />}>
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/"
+                element={
+                  <AuthLayout>
+                    <DashboardLayout />
+                  </AuthLayout>
+                }
+              >
                 <Route index element={<Dashboard />} />
                 <Route path="users" element={<Users />} />
                 <Route path="otp-management" element={<OtpManagement />} />

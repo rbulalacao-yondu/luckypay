@@ -24,8 +24,13 @@ async function bootstrap() {
   app.use(helmet(helmetConfig));
 
   // CORS configuration
-  const corsConfig = configService.get('security.cors');
-  app.enableCors(corsConfig);
+  app.enableCors({
+    origin: ['http://localhost:3000', 'http://localhost:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    exposedHeaders: ['Authorization'],
+    credentials: true,
+  });
 
   const port = process.env.PORT || 3000;
   await app.listen(port);

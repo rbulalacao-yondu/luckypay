@@ -3,11 +3,12 @@ import {
   Post,
   Body,
   UseGuards,
-  Request,
   HttpCode,
   HttpStatus,
   UnauthorizedException,
+  Request,
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RequestOtpDto } from './dto/request-otp.dto';
@@ -26,7 +27,10 @@ import { ThrottlerGuard } from '@nestjs/throttler';
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly jwtService: JwtService,
+  ) {}
 
   @Post('login')
   async login(@Body() loginDto: LoginDto) {
@@ -140,5 +144,34 @@ export class AuthController {
       throw new UnauthorizedException('Invalid or expired refresh token');
     }
     return tokens;
+  }
+
+  @Post('admin/login')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Admin login' })
+  @ApiResponse({ status: 200, description: 'Admin logged in successfully' })
+  @ApiResponse({ status: 401, description: 'Invalid credentials' })
+  @ApiBody({ type: LoginDto })
+  async adminLogin(@Body() loginDto: LoginDto) {
+    const user = await this.authService.validateAdminUser(
+      loginDto.email,
+      loginDto.password,
+    );
+
+    if (!user) {
+      throw new UnauthorizedException('Invalid admin credentials');
+    }
+
+    const payload = { email: user.email, sub: user.id, role: user.role };
+    const accessToken = this.jwtService.sign(payload);
+
+    return {
+      accessToken,
+      user: {
+        id: user.id,
+        email: user.email,
+        role: user.role,
+      },
+    };
   }
 }

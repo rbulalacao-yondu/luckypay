@@ -8,7 +8,8 @@ import { UsersService } from '../users/users.service';
 import { LoginDto } from './dto/login.dto';
 import { OtpService } from './services/otp.service';
 import { TokenService } from './services/token.service';
-import { UserStatus } from '../users/entities/user.entity';
+import { UserRole, UserStatus } from '../users/entities/user.entity';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -101,5 +102,33 @@ export class AuthService {
 
   async refreshTokens(refreshToken: string) {
     return this.tokenService.refreshAccessToken(refreshToken);
+  }
+
+  generateToken(payload: { email: string; sub: number; role: string }) {
+    return this.jwtService.sign(payload);
+  }
+
+  async validateAdminUser(email: string, password: string) {
+    const user = await this.usersService.findByEmail(email);
+
+    if (!user) {
+      return null;
+    }
+
+    if (user.role !== UserRole.ADMIN) {
+      return null;
+    }
+
+    if (user.status !== UserStatus.ACTIVE) {
+      return null;
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password || '');
+    if (!isPasswordValid) {
+      return null;
+    }
+
+    const { password: _, ...result } = user;
+    return result;
   }
 }

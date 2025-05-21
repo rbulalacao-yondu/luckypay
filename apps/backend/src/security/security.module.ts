@@ -1,7 +1,7 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import helmet from 'helmet';
-import * as cors from 'cors';
+
 import * as session from 'express-session';
 import * as cookieParser from 'cookie-parser';
 import { rateLimit } from 'express-rate-limit';
@@ -13,21 +13,6 @@ export class SecurityModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     // Apply Helmet security headers
     consumer.apply(helmet()).forRoutes('*');
-
-    // Apply CORS
-    consumer
-      .apply(
-        cors({
-          origin: [
-            'http://localhost:3000', // API server
-            'http://localhost:5173', // Vite dev server
-          ],
-          credentials: true,
-          methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-          allowedHeaders: ['Content-Type', 'Authorization'],
-        }),
-      )
-      .forRoutes('*');
 
     // Apply rate limiting
     consumer

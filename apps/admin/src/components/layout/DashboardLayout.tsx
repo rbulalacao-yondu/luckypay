@@ -13,6 +13,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Button,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -22,8 +23,10 @@ import {
   Security as SecurityIcon,
   Key as KeyIcon,
   Settings as SettingsIcon,
+  Logout as LogoutIcon,
 } from '@mui/icons-material';
 import { Link, Outlet } from 'react-router-dom';
+import { useAuth } from '../../hooks';
 
 const drawerWidth = 240;
 
@@ -62,7 +65,9 @@ const menuItems = [
 ];
 
 export default function DashboardLayout() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
+  const { logout, getUser } = useAuth();
+  const user = getUser();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -70,6 +75,10 @@ export default function DashboardLayout() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -82,16 +91,26 @@ export default function DashboardLayout() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             LuckyPay Admin
           </Typography>
+
+          {user && (
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Typography variant="body1">{user.username}</Typography>
+              <Button
+                color="inherit"
+                startIcon={<LogoutIcon />}
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
       <Drawer
