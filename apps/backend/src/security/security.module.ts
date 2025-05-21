@@ -18,8 +18,10 @@ export class SecurityModule implements NestModule {
     consumer
       .apply(
         cors({
-          origin:
-            this.configService.get('CORS_ORIGIN') || 'http://localhost:3000',
+          origin: [
+            'http://localhost:3000', // API server
+            'http://localhost:5173', // Vite dev server
+          ],
           credentials: true,
           methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
           allowedHeaders: ['Content-Type', 'Authorization'],
