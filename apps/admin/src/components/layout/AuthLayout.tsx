@@ -1,5 +1,4 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import { Box, CircularProgress } from '@mui/material';
 import { useAuth } from '../../hooks';
 
 interface AuthLayoutProps {
@@ -39,16 +38,9 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
   if (!isInitialized) {
     console.log('Auth not initialized yet, showing loading state');
     return (
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-        }}
-      >
-        <CircularProgress />
-      </Box>
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+      </div>
     );
   }
 

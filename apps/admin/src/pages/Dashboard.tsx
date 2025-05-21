@@ -1,94 +1,63 @@
-import { Box, Typography, Paper, CircularProgress } from '@mui/material';
-import { styled } from '@mui/material/styles';
 import { useDashboardStats } from '../hooks/queries/useDashboardStats';
-
-const StyledPaper = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  color: theme.palette.text.secondary,
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-}));
 
 export default function Dashboard() {
   const { data: stats, isLoading, error } = useDashboardStats();
 
   if (isLoading) {
     return (
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-        }}
-      >
-        <CircularProgress />
-      </Box>
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Box sx={{ p: 3 }}>
-        <Typography color="error">Error loading dashboard data</Typography>
-      </Box>
+      <div className="p-4">
+        <p className="text-error font-medium">Error loading dashboard data</p>
+      </div>
     );
   }
 
   return (
-    <Box component="div">
-      <Typography variant="h4" gutterBottom>
-        Dashboard
-      </Typography>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: '1fr',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-            lg: 'repeat(4, 1fr)',
-          },
-          gap: 3,
-        }}
-      >
-        <StyledPaper>
-          <Typography variant="h6" gutterBottom>
+    <div>
+      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="bg-white rounded-lg shadow p-6 h-full flex flex-col justify-center">
+          <h2 className="text-gray-600 text-sm font-medium mb-2">
             Total Users
-          </Typography>
-          <Typography variant="h4">
+          </h2>
+          <p className="text-2xl font-bold">
             {stats?.totalUsers.toLocaleString()}
-          </Typography>
-        </StyledPaper>
-        <StyledPaper>
-          <Typography variant="h6" gutterBottom>
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow p-6 h-full flex flex-col justify-center">
+          <h2 className="text-gray-600 text-sm font-medium mb-2">
             Active Users
-          </Typography>
-          <Typography variant="h4">
+          </h2>
+          <p className="text-2xl font-bold">
             {stats?.activeUsers.toLocaleString()}
-          </Typography>
-        </StyledPaper>
-        <StyledPaper>
-          <Typography variant="h6" gutterBottom>
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow p-6 h-full flex flex-col justify-center">
+          <h2 className="text-gray-600 text-sm font-medium mb-2">
             Total Transactions
-          </Typography>
-          <Typography variant="h4">
+          </h2>
+          <p className="text-2xl font-bold">
             {stats?.totalTransactions.toLocaleString()}
-          </Typography>
-        </StyledPaper>
-        <StyledPaper>
-          <Typography variant="h6" gutterBottom>
-            Revenue
-          </Typography>
-          <Typography variant="h4">
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow p-6 h-full flex flex-col justify-center">
+          <h2 className="text-gray-600 text-sm font-medium mb-2">Revenue</h2>
+          <p className="text-2xl font-bold">
             ₱{stats?.revenue.toLocaleString()}
-          </Typography>
-        </StyledPaper>
-      </Box>
-    </Box>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

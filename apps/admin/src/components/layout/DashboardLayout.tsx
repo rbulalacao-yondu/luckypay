@@ -1,67 +1,23 @@
 import { useState } from 'react';
-import { styled } from '@mui/material/styles';
-import {
-  Box,
-  CssBaseline,
-  AppBar as MuiAppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Drawer,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Button,
-} from '@mui/material';
-import {
-  Menu as MenuIcon,
-  ChevronLeft as ChevronLeftIcon,
-  Dashboard as DashboardIcon,
-  People as PeopleIcon,
-  Security as SecurityIcon,
-  Key as KeyIcon,
-  Settings as SettingsIcon,
-  Logout as LogoutIcon,
-} from '@mui/icons-material';
 import { Link, Outlet } from 'react-router-dom';
 import { useAuth } from '../../hooks';
-
-const drawerWidth = 240;
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<{ open?: boolean }>(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-}));
+import {
+  Bars3Icon,
+  ChevronLeftIcon,
+  HomeIcon,
+  UsersIcon,
+  ShieldCheckIcon,
+  KeyIcon,
+  Cog6ToothIcon,
+  ArrowRightOnRectangleIcon,
+} from '@heroicons/react/24/outline';
 
 const menuItems = [
-  { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
-  { text: 'Users', icon: <PeopleIcon />, path: '/users' },
-  { text: 'OTP Management', icon: <KeyIcon />, path: '/otp-management' },
-  { text: 'Security Logs', icon: <SecurityIcon />, path: '/security-logs' },
-  { text: 'Settings', icon: <SettingsIcon />, path: '/settings' },
+  { text: 'Dashboard', icon: HomeIcon, path: '/' },
+  { text: 'Users', icon: UsersIcon, path: '/users' },
+  { text: 'OTP Management', icon: KeyIcon, path: '/otp-management' },
+  { text: 'Security Logs', icon: ShieldCheckIcon, path: '/security-logs' },
+  { text: 'Settings', icon: Cog6ToothIcon, path: '/settings' },
 ];
 
 export default function DashboardLayout() {
@@ -82,114 +38,87 @@ export default function DashboardLayout() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            LuckyPay Admin
-          </Typography>
+    <div className="flex h-screen bg-gray-100">
+      {/* Top Navigation Bar */}
+      <div
+        className={`fixed top-0 left-0 right-0 bg-primary text-white z-10 transition-all duration-300 ${
+          open ? 'ml-[240px]' : 'ml-16'
+        }`}
+      >
+        <div className="flex items-center justify-between px-4 h-16">
+          <div className="flex items-center">
+            <button
+              className={`text-white p-2 rounded-md hover:bg-primary-dark ${
+                open ? 'hidden' : 'block'
+              }`}
+              onClick={handleDrawerOpen}
+              aria-label="open drawer"
+            >
+              <Bars3Icon className="h-6 w-6" />
+            </button>
+            <h1 className="text-xl font-medium ml-2">LuckyPay Admin</h1>
+          </div>
 
           {user && (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Typography variant="body1">{user.email}</Typography>
-              <Button
-                color="inherit"
-                startIcon={<LogoutIcon />}
+            <div className="flex items-center gap-4">
+              <span className="text-sm">{user.email}</span>
+              <button
+                className="flex items-center gap-1 text-sm bg-primary-dark px-3 py-1 rounded hover:bg-primary-light"
                 onClick={handleLogout}
               >
+                <ArrowRightOnRectangleIcon className="h-4 w-4" />
                 Logout
-              </Button>
-            </Box>
+              </button>
+            </div>
           )}
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        open={open}
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
-            whiteSpace: 'nowrap',
-            ...(open
-              ? {
-                  width: drawerWidth,
-                  transition: (theme) =>
-                    theme.transitions.create('width', {
-                      easing: theme.transitions.easing.sharp,
-                      duration: theme.transitions.duration.enteringScreen,
-                    }),
-                  overflowX: 'hidden',
-                }
-              : {
-                  width: (theme) => theme.spacing(7),
-                  transition: (theme) =>
-                    theme.transitions.create('width', {
-                      easing: theme.transitions.easing.sharp,
-                      duration: theme.transitions.duration.leavingScreen,
-                    }),
-                  overflowX: 'hidden',
-                }),
-          },
-        }}
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full bg-white border-r border-gray-200 transition-all duration-300 shadow-md ${
+          open ? 'w-[240px]' : 'w-16'
+        }`}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {menuItems.map((item) => (
-            <ListItem
-              key={item.text}
-              component={Link}
-              to={item.path}
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={{ opacity: open ? 1 : 0 }}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}
+        <div className="flex justify-end p-4 border-b border-gray-200">
+          <button
+            onClick={handleDrawerClose}
+            className="p-1 rounded-full hover:bg-gray-200"
+          >
+            <ChevronLeftIcon className="h-5 w-5 text-gray-500" />
+          </button>
+        </div>
+
+        <nav className="mt-5">
+          <ul>
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li key={item.text}>
+                  <Link
+                    to={item.path}
+                    className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100"
+                  >
+                    <Icon className={`h-5 w-5 ${!open && 'mx-auto'}`} />
+                    {open && <span className="ml-3">{item.text}</span>}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+
+      {/* Main Content */}
+      <div
+        className={`flex-1 transition-all duration-300 overflow-auto ${
+          open ? 'ml-[240px]' : 'ml-16'
+        } mt-16`}
       >
-        <DrawerHeader />
-        <Outlet />
-      </Box>
-    </Box>
+        <main className="p-6">
+          <Outlet />
+        </main>
+      </div>
+    </div>
   );
 }
