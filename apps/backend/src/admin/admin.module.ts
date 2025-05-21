@@ -8,6 +8,7 @@ import { SecurityLog } from './entities/security-log.entity';
 import { GamingMachine } from './entities/gaming-machine.entity';
 import { GamingMachineService } from './services/gaming-machine.service';
 import { GamingMachineController } from './controllers/gaming-machine.controller';
+import { PlayersController } from './controllers/players.controller';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({
@@ -17,7 +18,7 @@ import { AuthModule } from '../auth/auth.module';
     AuthModule,
   ],
   providers: [AdminService, GamingMachineService],
-  controllers: [AdminController, GamingMachineController],
+  controllers: [AdminController, GamingMachineController, PlayersController],
   exports: [AdminService, GamingMachineService],
 })
 export class AdminModule {}

@@ -287,4 +287,40 @@ export class AdminService {
       totalPointsRedeemed: 0,
     };
   }
+
+  async getPlayers() {
+    return this.userRepository.find({
+      where: { role: UserRole.USER },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async searchPlayers(query: string) {
+    if (!query) return this.getPlayers();
+
+    return this.userRepository
+      .createQueryBuilder('user')
+      .where('user.role = :role', { role: UserRole.USER })
+      .andWhere(
+        '(LOWER(user.firstName) LIKE LOWER(:query) OR ' +
+          'LOWER(user.lastName) LIKE LOWER(:query) OR ' +
+          'LOWER(user.email) LIKE LOWER(:query) OR ' +
+          'user.mobileNumber LIKE :query)',
+        { query: `%${query}%` },
+      )
+      .orderBy('user.createdAt', 'DESC')
+      .getMany();
+  }
+
+  async getPlayer(id: number) {
+    const player = await this.userRepository.findOne({
+      where: { id, role: UserRole.USER },
+    });
+
+    if (!player) {
+      throw new NotFoundException(`Player with ID ${id} not found`);
+    }
+
+    return player;
+  }
 }
