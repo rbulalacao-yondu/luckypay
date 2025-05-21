@@ -19,6 +19,13 @@ export class FinancialStatsService {
     const startOfToday = startOfDay(today);
     const endOfToday = endOfDay(today);
 
+    // Initialize hourly transaction counts
+    const hourlyTransactions = Array.from({ length: 24 }, (_, i) => ({
+      hour: i,
+      count: 0,
+      amount: 0,
+    }));
+
     // Get today's transactions
     const [todaysCashIns, todaysCoinIns] = await Promise.all([
       this.cashInRepository.find({
@@ -90,12 +97,45 @@ export class FinancialStatsService {
         ? ((totalRevenueToday - yesterdayTotal) / yesterdayTotal) * 100
         : 0;
 
+    // Calculate hourly transactions and payment channel distribution
+    const cashInsTotal = todaysCashIns.reduce(
+      (acc, curr) => acc + Number(curr.amount),
+      0,
+    );
+    const coinInsTotal = todaysCoinIns.reduce(
+      (acc, curr) => acc + Number(curr.amount),
+      0,
+    );
+
+    // Process transactions by hour
+    [...todaysCashIns, ...todaysCoinIns].forEach((transaction) => {
+      const hour = new Date(transaction.timestamp).getHours();
+      hourlyTransactions[hour].count++;
+      hourlyTransactions[hour].amount += Number(transaction.amount);
+    });
+
+    // Calculate payment channel distribution
+    const paymentChannels = [
+      {
+        channel: 'GCash',
+        amount: cashInsTotal,
+        percentage: (cashInsTotal / (cashInsTotal + coinInsTotal || 1)) * 100,
+      },
+      {
+        channel: 'Coin-in',
+        amount: coinInsTotal,
+        percentage: (coinInsTotal / (cashInsTotal + coinInsTotal || 1)) * 100,
+      },
+    ];
+
     return {
       totalTransactionsToday,
       avgTransactionValue,
       totalRevenueToday,
       revenueGrowth,
       dailyRevenue,
+      hourlyTransactions,
+      paymentChannels,
     };
   }
 }

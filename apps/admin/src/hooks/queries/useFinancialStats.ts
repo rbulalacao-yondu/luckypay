@@ -12,6 +12,16 @@ export interface FinancialStats {
     cashIns: number;
     total: number;
   }[];
+  hourlyTransactions: {
+    hour: number;
+    count: number;
+    amount: number;
+  }[];
+  paymentChannels: {
+    channel: string;
+    amount: number;
+    percentage: number;
+  }[];
 }
 
 export const useFinancialStats = () => {
