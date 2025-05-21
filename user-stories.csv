@@ -20,6 +20,7 @@ View Loyalty Tier,"As a user, I want to see my current loyalty tier, so I unders
 OTP Rate Limiting and Expiry,"As the system, I want to restrict OTP resends and validate expiry, so that I prevent abuse or fraud.",OTP expires in 60s; Max 5/hr; Countdown for resend.
 Encrypted Transactions,"As the system, I want all data transmissions to be encrypted, so that sensitive payment and session information is secure.",Uses HTTPS; GCash API uses tokens; Sessions encrypted.
 Admin Login,"As an admin, I want to log in securely with a username and password, so that I can access the admin dashboard.",Admin enters valid credentials; Access granted on match; Invalid attempts blocked after 5 tries; Session times out after 15 mins of inactivity.
+
 Role-Based Access Control,"As a super admin, I want to assign different roles to team members, so that they only access features relevant to their job.","Roles include Super Admin, Finance Admin, Operator, Loyalty Manager; Permissions enforced per module; Admins cannot exceed their role access."
 View Dashboard Overview,"As an admin, I want to see a summary of key metrics, so I can quickly assess app performance.","Metrics show cash-ins, active users, sessions, loyalty points; Auto-refresh every 10 seconds."
 View Visual Charts,"As an admin, I want visual charts for trends, so I can analyze app usage over time.","Charts show cash-in trend, machine activity, top users; Filters for day/week/month."

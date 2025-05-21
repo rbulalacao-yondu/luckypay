@@ -2,6 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { User } from '../users/entities/user.entity';
 import { SecurityLog } from '../admin/entities/security-log.entity';
+import { GamingMachine } from '../admin/entities/gaming-machine.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'mysql',
@@ -10,9 +11,14 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: process.env.DB_USERNAME || 'luckypay',
   password: process.env.DB_PASSWORD || 'luckypay33',
   database: process.env.DB_DATABASE || 'luckypaydb',
-  synchronize: process.env.NODE_ENV !== 'production',
+  synchronize: true, // Temporarily enable synchronize to create tables
   logging: process.env.NODE_ENV !== 'production',
-  entities: [User, SecurityLog],
+  entities: [User, SecurityLog, GamingMachine],
+  migrations: [__dirname + '/../migrations/*.{js,ts}'],
+  migrationsRun: true,
 };
 
-// Removed manual initialization of AppDataSource to avoid conflicts with TypeOrmModule.forRoot
+export default new DataSource({
+  ...typeOrmConfig,
+  migrations: [__dirname + '/../migrations/*.{js,ts}'],
+} as DataSourceOptions);

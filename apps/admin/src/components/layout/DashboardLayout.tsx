@@ -13,11 +13,17 @@ import {
   BellIcon,
   UserCircleIcon,
   MoonIcon,
+  ComputerDesktopIcon,
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
   { text: 'Dashboard', icon: HomeIcon, path: '/' },
   { text: 'Users', icon: UsersIcon, path: '/users' },
+  {
+    text: 'Gaming Machines',
+    icon: ComputerDesktopIcon,
+    path: '/gaming-machines',
+  },
   { text: 'OTP Management', icon: KeyIcon, path: '/otp-management' },
   { text: 'Security Logs', icon: ShieldCheckIcon, path: '/security-logs' },
   { text: 'Settings', icon: Cog6ToothIcon, path: '/settings' },
