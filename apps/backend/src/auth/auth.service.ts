@@ -112,21 +112,42 @@ export class AuthService {
     const user = await this.usersService.findByEmail(email);
 
     if (!user) {
+      console.log(`Admin validation failed: No user found with email ${email}`);
       return null;
     }
 
-    if (user.role !== UserRole.ADMIN) {
+    // Check for any admin roles (admin, super_admin, finance_admin)
+    const isAdminRole = [
+      UserRole.ADMIN,
+      UserRole.SUPER_ADMIN,
+      UserRole.FINANCE_ADMIN,
+    ].includes(user.role);
+
+    if (!isAdminRole) {
+      console.log(
+        `Admin validation failed: User ${email} has non-admin role ${user.role}`,
+      );
       return null;
     }
 
     if (user.status !== UserStatus.ACTIVE) {
+      console.log(
+        `Admin validation failed: User ${email} has status ${user.status}`,
+      );
       return null;
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password || '');
     if (!isPasswordValid) {
+      console.log(
+        `Admin validation failed: Invalid password for user ${email}`,
+      );
       return null;
     }
+
+    console.log(
+      `Admin validation successful for user ${email} with role ${user.role}`,
+    );
 
     const { password: _, ...result } = user;
     return result;

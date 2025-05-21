@@ -8,9 +8,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
   withCredentials: true,
-});
-
-// Add request interceptor for auth token
+}); // Add request interceptor for auth token
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('admin_token');
@@ -33,9 +31,26 @@ api.interceptors.request.use(
       // Add additional debug info if this is a problematic endpoint
       if (endpoint.includes('users') || endpoint.includes('security-logs')) {
         console.log('Detailed auth info for sensitive endpoint:', {
-          user: localStorage.getItem('admin_user'),
+          url: endpoint,
+          method,
+          userStr: localStorage.getItem('admin_user'),
           tokenValid: token.split('.').length === 3, // Basic JWT structure check
         });
+
+        // Decode and log JWT payload for debugging
+        try {
+          const payload = token.split('.')[1];
+          const decodedToken = JSON.parse(atob(payload));
+          console.log('Decoded JWT token for debugging:', {
+            subject: decodedToken.sub,
+            role: decodedToken.role,
+            email: decodedToken.email,
+            exp: new Date(decodedToken.exp * 1000).toLocaleString(),
+            iat: new Date(decodedToken.iat * 1000).toLocaleString(),
+          });
+        } catch (e) {
+          console.error('Error decoding JWT token:', e);
+        }
       }
     } else {
       console.warn('API Request without token:', {

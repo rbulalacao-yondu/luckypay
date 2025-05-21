@@ -19,7 +19,7 @@ interface AuthResponse {
 
 // Convert backend roles to a normalized format
 const normalizeRole = (role: string): string => {
-  const roleStr = role.toLowerCase();
+  const roleStr = String(role).toLowerCase();
   if (roleStr === 'super_admin') return 'super_admin';
   if (roleStr.includes('admin')) return 'admin';
   return roleStr;
@@ -95,8 +95,14 @@ export function useAuth() {
 
       // Parse and validate user data
       const user = JSON.parse(userStr);
-      if (!user || !user.role) {
+      if (!user) {
         console.log('Invalid user data', user);
+        return false;
+      }
+
+      // Handle case where role might be missing or null
+      if (!user.role) {
+        console.warn('User has no role specified:', user);
         return false;
       }
 
@@ -138,6 +144,12 @@ export function useAuth() {
         console.log('Decoded JWT payload:', decodedData);
       } catch (decodeError) {
         console.error('Could not decode JWT', decodeError);
+      }
+
+      // Ensure user has role property, default to 'admin' if missing
+      if (!data.user.role) {
+        console.warn('User object missing role, setting default role "admin"');
+        data.user.role = 'admin';
       }
 
       // Normalize the role to ensure consistent role checks

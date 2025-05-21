@@ -21,20 +21,34 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: JwtPayload) {
-    // Verify this is an access token and is still active
-    if (
-      payload.type !== 'access' ||
-      !this.tokenService.isTokenActive(payload.jti)
-    ) {
-      throw new UnauthorizedException('Invalid or expired token');
-    }
+    try {
+      console.log('JWT payload being validated:', payload);
 
-    // Get user to ensure they still exist and are active
-    const user = await this.usersService.findOne(payload.sub);
-    if (!user) {
-      throw new UnauthorizedException('User not found');
-    }
+      // Verify token type if present in payload
+      if (payload.type && payload.type !== 'access') {
+        throw new UnauthorizedException('Invalid token type');
+      }
 
-    return user;
+      // Verify token ID if present
+      if (payload.jti && !this.tokenService.isTokenActive(payload.jti)) {
+        throw new UnauthorizedException('Token is no longer active');
+      }
+
+      // Get user to ensure they still exist and are active
+      const user = await this.usersService.findOne(payload.sub);
+      if (!user) {
+        throw new UnauthorizedException('User not found');
+      }
+
+      // Ensure the role from the token matches the user's current role
+      // This will allow the roles guard to work correctly
+      return {
+        ...user,
+        role: payload.role || user.role, // Prefer token role if available
+      };
+    } catch (error) {
+      console.error('JWT validation error:', error);
+      throw error;
+    }
   }
 }

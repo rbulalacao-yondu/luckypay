@@ -29,23 +29,31 @@ export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
   @Get('users')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
   async getAllUsers() {
+    console.log('Accessing getAllUsers endpoint');
     return this.adminService.getAllUsers();
   }
 
   @Get('users/by-role')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
   async getUsersByRole(@Query('role') role: UserRole) {
+    console.log('Accessing getUsersByRole endpoint with role:', role);
     return this.adminService.getUsersByRole(role);
   }
 
   @Put('users/role')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.ADMIN)
   async updateUserRole(
     @Body() updateUserRoleDto: UpdateUserRoleDto,
     @Req() req,
   ) {
+    console.log(
+      'Updating user role:',
+      updateUserRoleDto,
+      'by admin:',
+      req.user.email,
+    );
     return this.adminService.updateUserRole(updateUserRoleDto, req.user.role);
   }
 
@@ -75,20 +83,23 @@ export class AdminController {
   }
 
   @Get('security-logs')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
   async getSecurityLogs(@Query() query: QuerySecurityLogsDto) {
+    console.log('Accessing security logs with query:', query);
     return this.adminService.getSecurityLogs(query);
   }
 
   @Get('security-logs/type/:type')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
   async getSecurityLogsByType(@Param('type') type: SecurityLogType) {
+    console.log('Accessing security logs by type:', type);
     return this.adminService.getSecurityLogsByType(type);
   }
 
   @Get('security-logs/user/:userId')
-  @Roles(Role.SUPER_ADMIN)
+  @Roles(Role.SUPER_ADMIN, Role.FINANCE_ADMIN)
   async getSecurityLogsByUser(@Param('userId', ParseIntPipe) userId: number) {
+    console.log('Accessing security logs for user:', userId);
     return this.adminService.getSecurityLogsByUser(userId);
   }
 

@@ -7,6 +7,8 @@ import {
   HttpStatus,
   UnauthorizedException,
   Request,
+  Get,
+  Req,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
@@ -162,7 +164,23 @@ export class AuthController {
       throw new UnauthorizedException('Invalid admin credentials');
     }
 
-    const payload = { email: user.email, role: user.role };
+    // Log successful admin login
+    console.log(
+      `Admin login successful for user ${user.email} with role ${user.role}`,
+    );
+
+    // Prepare payload with explicit role that matches the Role enum
+    // This is critical for the RolesGuard to work properly
+    const role = user.role;
+    console.log('Creating JWT token with role:', role);
+
+    const payload = {
+      email: user.email,
+      role,
+      // Add standard JWT claims
+      type: 'access',
+    };
+
     const accessToken = this.jwtService.sign(payload, {
       expiresIn: '1d',
       subject: user.id.toString(),
@@ -178,5 +196,22 @@ export class AuthController {
     };
 
     return response;
+  }
+
+  @Get('debug/auth')
+  @UseGuards(JwtAuthGuard)
+  async debugAuth(@Req() req) {
+    console.log('Debug Auth endpoint accessed');
+    // Return user info from the request to verify what the JWT is providing
+    return {
+      message: 'Authentication working correctly',
+      user: {
+        id: req.user.id,
+        email: req.user.email,
+        role: req.user.role,
+        status: req.user.status,
+      },
+      // Don't include sensitive fields
+    };
   }
 }
