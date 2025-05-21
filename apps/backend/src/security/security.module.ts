@@ -12,7 +12,7 @@ export class SecurityModule implements NestModule {
 
   configure(consumer: MiddlewareConsumer) {
     // Apply Helmet security headers
-    consumer.apply(helmet).forRoutes('*');
+    consumer.apply(helmet()).forRoutes('*');
 
     // Apply CORS
     consumer
