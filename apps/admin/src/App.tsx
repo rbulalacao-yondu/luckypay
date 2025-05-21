@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Users from './pages/Users';
 import OtpManagement from './pages/OtpManagement';
 import SecurityLogs from './pages/SecurityLogs';
+import Settings from './pages/Settings';
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ function App() {
                 <Route path="users" element={<Users />} />
                 <Route path="otp-management" element={<OtpManagement />} />
                 <Route path="security-logs" element={<SecurityLogs />} />
+                <Route path="settings" element={<Settings />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Route>
 

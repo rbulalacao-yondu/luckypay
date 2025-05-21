@@ -102,10 +102,14 @@ export default function SecurityLogs() {
     );
   }
 
+  // Unified error handling
   if (error) {
     return (
       <Box sx={{ p: 3 }}>
-        <Typography color="error">Error loading security logs</Typography>
+        <Typography color="error" variant="h6">
+          Error loading security logs:{' '}
+          {error instanceof Error ? error.message : 'Unknown error'}
+        </Typography>
       </Box>
     );
   }
@@ -187,7 +191,7 @@ export default function SecurityLogs() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {logs?.map((log) => (
+              {logs?.data?.map((log) => (
                 <TableRow key={log.id}>
                   <TableCell>
                     {new Date(log.timestamp).toLocaleString()}
@@ -210,7 +214,7 @@ export default function SecurityLogs() {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={logs?.length || 0}
+          count={logs?.total || 0}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

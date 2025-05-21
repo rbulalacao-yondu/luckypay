@@ -16,10 +16,37 @@ api.interceptors.request.use(
     const token = localStorage.getItem('admin_token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
+
+      // Log detailed info about the request
+      const endpoint = config.url || 'unknown endpoint';
+      const method = config.method?.toUpperCase() || 'unknown method';
+
+      console.log(`API Request: ${method} ${endpoint}`, {
+        tokenLength: token.length,
+        tokenPreview: `${token.substring(0, 15)}...`,
+        headers: {
+          'Content-Type': config.headers['Content-Type'],
+          Authorization: `Bearer ${token.substring(0, 10)}...`,
+        },
+      });
+
+      // Add additional debug info if this is a problematic endpoint
+      if (endpoint.includes('users') || endpoint.includes('security-logs')) {
+        console.log('Detailed auth info for sensitive endpoint:', {
+          user: localStorage.getItem('admin_user'),
+          tokenValid: token.split('.').length === 3, // Basic JWT structure check
+        });
+      }
+    } else {
+      console.warn('API Request without token:', {
+        url: config.url,
+        method: config.method,
+      });
     }
     return config;
   },
   (error) => {
+    console.error('API Request Error:', error);
     return Promise.reject(error);
   },
 );
@@ -39,13 +66,27 @@ api.interceptors.response.use(
       url: error.config?.url,
       status: error.response?.status,
       data: error.response?.data,
+      message: error.message,
     });
-    if (error.response?.status === 401) {
-      // Handle token expiration
-      localStorage.removeItem('admin_token');
-      localStorage.removeItem('admin_user');
-      window.location.href = '/login';
+
+    // Handle authentication errors (401 Unauthorized or 403 Forbidden)
+    if (error.response?.status === 401 || error.response?.status === 403) {
+      console.warn('Authentication error detected', {
+        status: error.response.status,
+        url: error.config.url,
+        currentPath: window.location.pathname,
+      });
+
+      // Only redirect to login if we're not already on the login page
+      // This prevents redirect loops
+      if (!window.location.pathname.includes('/login')) {
+        console.log('Redirecting to login due to auth error');
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_user');
+        window.location.href = '/login';
+      }
     }
+
     return Promise.reject(error);
   },
 );
@@ -69,5 +110,9 @@ export const endpoints = {
   loyalty: {
     settings: '/admin/loyalty/settings',
     updateSettings: '/admin/loyalty/settings',
+  },
+  settings: {
+    get: '/admin/settings',
+    update: '/admin/settings',
   },
 };

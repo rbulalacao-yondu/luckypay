@@ -14,7 +14,7 @@ import { useAuth } from '../hooks';
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { login, isLoading, error, isAuthenticated } = useAuth();
+  const { login, isLoading, error, isAuthenticated, isInitialized } = useAuth();
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -26,46 +26,45 @@ export default function Login() {
       console.log('Login page auth check:', { isAuth });
       console.log('Token:', localStorage.getItem('admin_token'));
       console.log('User:', localStorage.getItem('admin_user'));
+
       if (isAuth) {
         const from = location.state?.from?.pathname || '/';
-        console.log('Redirecting to:', from);
+        console.log('Already authenticated, redirecting to:', from);
         navigate(from, { replace: true });
+      } else {
+        // Only clear tokens if auth check fails
+        console.log('Not authenticated, clearing tokens');
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_user');
       }
     };
-    checkAuth();
-  }, [isAuthenticated, navigate, location]);
+
+    // Only check auth if we're initialized
+    if (isInitialized) {
+      checkAuth();
+    }
+  }, [isAuthenticated, isInitialized, navigate, location]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const result = await login(credentials);
       console.log('Login successful:', result);
-      console.log('User details from response:', result.user);
 
-      // Force a check of authentication state immediately after updating localStorage
-      const isAuth = isAuthenticated();
-      console.log('Authentication status after login:', isAuth);
+      // Manually store data to ensure it's properly set
+      if (result.accessToken && result.user) {
+        console.log('Setting authentication data manually');
+        localStorage.setItem('admin_token', result.accessToken);
+        localStorage.setItem('admin_user', JSON.stringify(result.user));
 
-      // First try to navigate directly
-      if (isAuth) {
-        console.log('Authenticated - redirecting to dashboard');
-        navigate('/', { replace: true });
-        return;
+        // Use a short delay to ensure localStorage is updated
+        setTimeout(() => {
+          console.log('Navigating to dashboard after delay');
+          navigate('/', { replace: true });
+        }, 300);
+      } else {
+        console.error('Invalid login response data', result);
       }
-
-      // If immediate check fails, try with user data from response
-      // This handles the case where React state hasn't updated yet but we have valid data
-      if (result.user && result.user.role && result.accessToken) {
-        console.log('Response contains valid user data, attempting navigation');
-        navigate('/', { replace: true });
-        return;
-      }
-
-      // Last resort: try direct route with delay
-      console.log('Trying fallback route with delay');
-      setTimeout(() => {
-        navigate('/direct-dashboard', { replace: true });
-      }, 500);
     } catch (err) {
       console.error('Login submission error:', err);
       // Error is handled by the hook

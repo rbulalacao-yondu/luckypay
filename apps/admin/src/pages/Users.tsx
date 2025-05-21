@@ -63,6 +63,16 @@ export default function Users() {
   if (error) {
     return (
       <Box sx={{ p: 3 }}>
+        <Typography color="error" variant="h6">
+          Error loading users: {(error as Error).message || 'Unknown error'}
+        </Typography>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ p: 3 }}>
         <Typography color="error">Error loading users data</Typography>
       </Box>
     );
