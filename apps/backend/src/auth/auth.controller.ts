@@ -162,16 +162,21 @@ export class AuthController {
       throw new UnauthorizedException('Invalid admin credentials');
     }
 
-    const payload = { email: user.email, sub: user.id, role: user.role };
-    const accessToken = this.jwtService.sign(payload);
+    const payload = { email: user.email, role: user.role };
+    const accessToken = this.jwtService.sign(payload, {
+      expiresIn: '1d',
+      subject: user.id.toString(),
+    });
 
-    return {
+    const response = {
       accessToken,
       user: {
-        id: user.id,
+        id: user.id.toString(),
         email: user.email,
         role: user.role,
       },
     };
+
+    return response;
   }
 }

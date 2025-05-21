@@ -66,8 +66,8 @@ const menuItems = [
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(true);
-  const { logout, getUser } = useAuth();
-  const user = getUser();
+  const { logout, currentUser } = useAuth();
+  const user = currentUser;
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -101,7 +101,7 @@ export default function DashboardLayout() {
 
           {user && (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Typography variant="body1">{user.username}</Typography>
+              <Typography variant="body1">{user.email}</Typography>
               <Button
                 color="inherit"
                 startIcon={<LogoutIcon />}

@@ -29,6 +29,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/login" element={<Login />} />
+
+              {/* Protected routes with nested layout */}
               <Route
                 path="/"
                 element={
@@ -43,6 +45,16 @@ function App() {
                 <Route path="security-logs" element={<SecurityLogs />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Route>
+
+              {/* Fallback direct route to dashboard that bypasses layouts for debugging */}
+              <Route
+                path="/direct-dashboard"
+                element={
+                  <AuthLayout>
+                    <Dashboard />
+                  </AuthLayout>
+                }
+              />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

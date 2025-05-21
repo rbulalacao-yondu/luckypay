@@ -24,13 +24,26 @@ api.interceptors.request.use(
   },
 );
 
-// Add response interceptor for error handling
+// Add response interceptor for error handling and debugging
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    console.log('API Response:', {
+      url: response.config.url,
+      status: response.status,
+      data: response.data,
+    });
+    return response;
+  },
   async (error) => {
+    console.error('API Error:', {
+      url: error.config?.url,
+      status: error.response?.status,
+      data: error.response?.data,
+    });
     if (error.response?.status === 401) {
       // Handle token expiration
       localStorage.removeItem('admin_token');
+      localStorage.removeItem('admin_user');
       window.location.href = '/login';
     }
     return Promise.reject(error);
