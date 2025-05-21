@@ -14,6 +14,7 @@ import {
   UserCircleIcon,
   MoonIcon,
   ComputerDesktopIcon,
+  BanknotesIcon,
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
@@ -27,6 +28,7 @@ const menuItems = [
   },
   { text: 'OTP Management', icon: KeyIcon, path: '/otp-management' },
   { text: 'Security Logs', icon: ShieldCheckIcon, path: '/security-logs' },
+  { text: 'Cash-Ins', icon: BanknotesIcon, path: '/cash-ins' },
   { text: 'Settings', icon: Cog6ToothIcon, path: '/settings' },
 ];
 

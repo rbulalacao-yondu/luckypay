@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Not, IsNull, MoreThan } from 'typeorm';
+import { Not, IsNull, MoreThan, Like } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { User, UserRole } from '../users/entities/user.entity';
 import { UpdateUserRoleDto } from './dto/update-user-role.dto';
@@ -13,6 +13,7 @@ import { OtpConfigDto } from './dto/otp-config.dto';
 import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
 import { SecurityLog, SecurityLogType } from './entities/security-log.entity';
 import { OtpService } from '../auth/services/otp.service';
+import { CashIn } from './entities/cash-in.entity';
 
 @Injectable()
 export class AdminService {
@@ -21,6 +22,8 @@ export class AdminService {
     private readonly userRepository: Repository<User>,
     @InjectRepository(SecurityLog)
     private readonly securityLogRepository: Repository<SecurityLog>,
+    @InjectRepository(CashIn)
+    private readonly cashInRepository: Repository<CashIn>,
     private readonly configService: ConfigService,
     private readonly otpService: OtpService,
   ) {}
@@ -322,5 +325,40 @@ export class AdminService {
     }
 
     return player;
+  }
+
+  // Cash-in Management Methods
+  async getCashIns() {
+    return this.cashInRepository.find({
+      relations: ['user'],
+      order: { timestamp: 'DESC' },
+    });
+  }
+
+  async searchCashIns(query: string) {
+    if (!query) return this.getCashIns();
+
+    return this.cashInRepository
+      .createQueryBuilder('cashIn')
+      .leftJoinAndSelect('cashIn.user', 'user')
+      .where('user.firstName LIKE :query', { query: `%${query}%` })
+      .orWhere('user.lastName LIKE :query', { query: `%${query}%` })
+      .orWhere('user.mobileNumber LIKE :query', { query: `%${query}%` })
+      .orWhere('cashIn.referenceId LIKE :query', { query: `%${query}%` })
+      .orderBy('cashIn.timestamp', 'DESC')
+      .getMany();
+  }
+
+  async getCashIn(id: string) {
+    const cashIn = await this.cashInRepository.findOne({
+      where: { id },
+      relations: ['user'],
+    });
+
+    if (!cashIn) {
+      throw new NotFoundException(`Cash-in with ID ${id} not found`);
+    }
+
+    return cashIn;
   }
 }

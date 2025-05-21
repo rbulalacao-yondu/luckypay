@@ -2200,3 +2200,826 @@
 {"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T08:55:22.210Z"}
 {"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T08:55:22.210Z"}
 {"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T08:55:22.211Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:55:54.342Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:55:54.367Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:55:54.949Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:55:54.964Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:55:57.369Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:55:57.394Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:55:58.153Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:55:58.164Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:06.812Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:06.831Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:08.640Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:08.649Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:13.851Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:57:13.879Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:58:52.091Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T08:58:52.121Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:58:53.207Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T08:58:53.224Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:01:30.004Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:30.005Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:01:30.006Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:01:30.006Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:01:30.006Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:01:30.007Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:01:30.007Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:30.007Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:30.008Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:30.008Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:01:30.008Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:30.009Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:01:30.010Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:01:30.010Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:01:30.010Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:01:30.010Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:01:30.011Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:01:30.012Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:01:30.013Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:01:30.014Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:01:30.015Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:01:30.016Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:01:46.324Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:46.325Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:01:46.325Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:01:46.325Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:01:46.325Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:01:46.326Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:01:46.326Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:46.326Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:46.327Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:01:46.327Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:01:46.327Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:01:46.327Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:01:46.327Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:01:46.328Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:01:46.329Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:01:46.330Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:01:46.331Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:01:46.332Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:01:46.333Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:01:46.335Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T09:02:09.800Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T09:02:09.816Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:05:23.615Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:05:23.616Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:05:23.616Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:05:23.616Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:05:23.617Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:05:23.617Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:05:23.617Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:05:23.618Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:05:23.618Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:05:23.619Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:05:23.619Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:05:23.619Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:05:23.619Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:05:23.619Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:05:23.620Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:05:23.620Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:05:23.620Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:05:23.620Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:05:23.620Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:05:23.621Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:05:23.622Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:05:23.623Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:05:23.624Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:05:23.625Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:05:23.626Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:05:23.627Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T09:05:30.945Z"}
+{"context":"ExceptionsHandler","error":{"message":"No metadata for \"CashIn\" was found."},"level":"error","message":"No metadata for \"CashIn\" was found.","stack":["EntityMetadataNotFoundError: No metadata for \"CashIn\" was found.\n    at DataSource.getMetadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/data-source/src/data-source/DataSource.ts:451:30)\n    at Repository.get metadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:54:40)\n    at Repository.find (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:573:39)\n    at AdminService.getCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/admin.service.ts:332:34)\n    at CashInsController.getAllCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/controllers/cash-ins.controller.ts:16:30)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:38:29\n    at InterceptorsConsumer.intercept (/home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/interceptors/interceptors-consumer.js:12:20)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:46:60\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-proxy.js:9:17"],"timestamp":"2025-05-21T09:05:30.965Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T09:05:30.976Z"}
+{"context":"ExceptionsHandler","error":{"message":"No metadata for \"CashIn\" was found."},"level":"error","message":"No metadata for \"CashIn\" was found.","stack":["EntityMetadataNotFoundError: No metadata for \"CashIn\" was found.\n    at DataSource.getMetadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/data-source/src/data-source/DataSource.ts:451:30)\n    at Repository.get metadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:54:40)\n    at Repository.find (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:573:39)\n    at AdminService.getCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/admin.service.ts:332:34)\n    at CashInsController.getAllCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/controllers/cash-ins.controller.ts:16:30)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:38:29\n    at InterceptorsConsumer.intercept (/home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/interceptors/interceptors-consumer.js:12:20)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:46:60\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-proxy.js:9:17"],"timestamp":"2025-05-21T09:05:30.991Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T09:06:33.038Z"}
+{"context":"ExceptionsHandler","error":{"message":"No metadata for \"CashIn\" was found."},"level":"error","message":"No metadata for \"CashIn\" was found.","stack":["EntityMetadataNotFoundError: No metadata for \"CashIn\" was found.\n    at DataSource.getMetadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/data-source/src/data-source/DataSource.ts:451:30)\n    at Repository.get metadata (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:54:40)\n    at Repository.find (/home/rvbulalacao/workspace/luckypay/node_modules/typeorm/repository/src/repository/Repository.ts:573:39)\n    at AdminService.getCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/admin.service.ts:332:34)\n    at CashInsController.getAllCashIns (/home/rvbulalacao/workspace/luckypay/apps/backend/src/admin/controllers/cash-ins.controller.ts:16:30)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:38:29\n    at InterceptorsConsumer.intercept (/home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/interceptors/interceptors-consumer.js:12:20)\n    at /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-execution-context.js:46:60\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/rvbulalacao/workspace/luckypay/node_modules/@nestjs/core/router/router-proxy.js:9:17"],"timestamp":"2025-05-21T09:06:33.047Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:07:59.651Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:07:59.652Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:07:59.653Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:07:59.653Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:07:59.653Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:07:59.654Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:07:59.654Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:07:59.654Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:07:59.655Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:07:59.655Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:07:59.655Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:07:59.656Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:07:59.656Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:07:59.656Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:07:59.656Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:07:59.656Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:07:59.657Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:07:59.657Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:07:59.657Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:07:59.658Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:07:59.659Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:07:59.660Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:07:59.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:07:59.662Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:07:59.663Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:07:59.664Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:08:32.142Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:08:32.143Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:08:32.143Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:08:32.144Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:08:32.144Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:08:32.144Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:08:32.144Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:08:32.145Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:08:32.145Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:08:32.145Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:08:32.146Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:08:32.147Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:08:32.148Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:08:32.149Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:08:32.150Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:08:32.151Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:08:32.152Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:09:49.560Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:09:49.561Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:09:49.561Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:09:49.561Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:09:49.562Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:09:49.562Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:09:49.562Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:09:49.562Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:09:49.562Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:09:49.563Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:09:49.564Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:09:49.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:09:49.566Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:09:49.567Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:09:49.568Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:09:49.569Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:23:46.715Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:23:46.716Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:23:46.717Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:23:46.717Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:23:46.717Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:23:46.718Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:23:46.718Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:23:46.718Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:23:46.719Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:23:46.719Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:23:46.720Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:23:46.720Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:23:46.720Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:23:46.720Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:23:46.720Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:23:46.721Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:23:46.721Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:23:46.721Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:23:46.721Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:23:46.722Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:23:46.722Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:23:46.722Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:23:46.722Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:23:46.722Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:23:46.723Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:23:46.724Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:23:46.725Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:23:46.726Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:23:46.727Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:23:46.729Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:25:05.768Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:25:05.769Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:25:05.769Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:25:05.770Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:25:05.770Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:25:05.771Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:25:05.771Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:25:05.771Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:25:05.772Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:25:05.772Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:25:05.772Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:25:05.772Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:25:05.773Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:25:05.773Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:25:05.773Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:25:05.773Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:25:05.773Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:25:05.774Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:25:05.774Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:25:05.774Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:25:05.774Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:25:05.774Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:25:05.775Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:25:05.776Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:25:05.777Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:25:05.778Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:25:05.779Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:25:05.779Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:25:05.779Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:25:05.779Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:25:05.779Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:25:05.780Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:26:28.529Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:26:28.538Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:26:28.538Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:26:28.538Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:26:28.539Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:26:28.539Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:26:28.540Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:26:28.540Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:26:28.541Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:26:28.542Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:26:28.542Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:26:28.542Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:26:28.543Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:26:28.543Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:26:28.543Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:26:28.543Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:26:28.544Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:26:28.544Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:26:28.545Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:26:28.546Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:26:28.546Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:26:28.546Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:26:28.546Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:26:28.547Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:26:28.548Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:26:28.548Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:26:28.548Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:26:28.549Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:26:28.550Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:26:28.550Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:26:28.550Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:26:28.551Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:26:28.551Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:26:28.551Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:26:28.556Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:26:28.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:26:28.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:26:28.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:26:28.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:26:28.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:26:28.558Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:26:28.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:26:28.560Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:26:28.560Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:26:28.560Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:26:28.564Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:27:46.370Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:27:46.371Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:27:46.372Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:27:46.372Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:27:46.372Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:27:46.373Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:27:46.373Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:27:46.374Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:27:46.374Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:27:46.374Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:27:46.375Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:27:46.376Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:27:46.377Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:27:46.378Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:27:46.378Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:27:46.378Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:27:46.378Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:27:46.379Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:27:46.380Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:27:46.381Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:27:46.382Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:27:46.383Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:27:46.384Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T09:57:00.874Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:57:00.875Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T09:57:00.875Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T09:57:00.875Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T09:57:00.876Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T09:57:00.876Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T09:57:00.876Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T09:57:00.876Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:57:00.876Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:57:00.877Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T09:57:00.878Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T09:57:00.879Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T09:57:00.880Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T09:57:00.881Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T09:57:00.882Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T09:57:00.883Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T10:02:02.573Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T10:02:02.574Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T10:02:02.574Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T10:02:02.574Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T10:02:02.575Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T10:02:02.575Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T10:02:02.575Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T10:02:02.575Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T10:02:02.575Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T10:02:02.576Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T10:02:02.577Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T10:02:02.578Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/settings, PUT} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/:userId, DELETE} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/otp/pending, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/type/:type, GET} route","timestamp":"2025-05-21T10:02:02.579Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/security-logs/user/:userId, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/overview, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/transactions/stats, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/settings, PUT} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/loyalty/metrics, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T10:02:02.580Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T10:02:02.581Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T10:02:02.582Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T10:02:46.637Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T10:02:46.715Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/otp/settings, user role: super_admin, required roles: super_admin","timestamp":"2025-05-21T10:04:46.337Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T10:04:51.939Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T10:04:51.957Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:04:54.186Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:04:54.205Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T10:04:58.970Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T10:04:59.020Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:05:27.876Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:05:27.895Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines/:id, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:05:34.010Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines/:id, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T10:05:34.018Z"}
