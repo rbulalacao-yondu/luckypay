@@ -8,10 +8,12 @@ import { GamingMachine } from './entities/gaming-machine.entity';
 import { CashIn } from './entities/cash-in.entity';
 import { CoinIn } from './entities/coin-in.entity';
 import { GamingMachineService } from './services/gaming-machine.service';
+import { FinancialStatsService } from './services/financial-stats.service';
 import { GamingMachineController } from './controllers/gaming-machine.controller';
 import { PlayersController } from './controllers/players.controller';
 import { CashInsController } from './controllers/cash-ins.controller';
 import { CoinInsController } from './controllers/coin-ins.controller';
+import { DashboardController } from './controllers/dashboard.controller';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({
@@ -20,14 +22,15 @@ import { AuthModule } from '../auth/auth.module';
     ConfigModule,
     AuthModule,
   ],
-  providers: [AdminService, GamingMachineService],
+  providers: [AdminService, GamingMachineService, FinancialStatsService],
   controllers: [
     AdminController,
     GamingMachineController,
     PlayersController,
     CashInsController,
     CoinInsController,
+    DashboardController,
   ],
-  exports: [AdminService, GamingMachineService],
+  exports: [AdminService, GamingMachineService, FinancialStatsService],
 })
 export class AdminModule {}
