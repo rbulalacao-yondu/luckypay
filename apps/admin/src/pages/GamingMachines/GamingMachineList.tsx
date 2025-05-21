@@ -5,6 +5,8 @@ import { ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import { gamingMachineService } from '../../services/gamingMachineService.ts';
 import type { GamingMachine } from '../../types/GamingMachine';
+import { MachineStatus } from '../../types/MachineStatus';
+import { getMachineStatusColor } from '../../utils/machineStatusUtils';
 
 const GamingMachineList: React.FC = () => {
   const [machines, setMachines] = useState<GamingMachine[]>([]);
@@ -15,6 +17,7 @@ const GamingMachineList: React.FC = () => {
     type: '',
     denomination: '',
     gameType: '',
+    status: '',
   });
   const navigate = useNavigate();
 
@@ -22,6 +25,8 @@ const GamingMachineList: React.FC = () => {
   const manufacturers = Array.from(
     new Set(machines.map((m) => m.manufacturer)),
   );
+
+  const statuses = Object.values(MachineStatus);
   const types = Array.from(new Set(machines.map((m) => m.type)));
   const denominations = Array.from(
     new Set(machines.flatMap((m) => m.denominations)),
@@ -62,6 +67,16 @@ const GamingMachineList: React.FC = () => {
           <span>Max: ₱{record.playerLimits.maxBet}</span>
         </Space>
       ),
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      render: (status: MachineStatus) => (
+        <Tag color={getMachineStatusColor(status)}>{status}</Tag>
+      ),
+      filters: statuses.map((status) => ({ text: status, value: status })),
+      onFilter: (value: any, record: GamingMachine) => record.status === value,
     },
   ];
 
@@ -169,7 +184,7 @@ const GamingMachineList: React.FC = () => {
             >
               {denominations.map((d) => (
                 <Select.Option key={d} value={d}>
-                  ${d}
+                  ₱{d}
                 </Select.Option>
               ))}
             </Select>

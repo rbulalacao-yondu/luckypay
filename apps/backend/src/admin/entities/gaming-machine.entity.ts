@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { MachineStatus } from './machine-status.enum';
 
 @Entity('gaming_machines')
 export class GamingMachine {
@@ -52,4 +53,11 @@ export class GamingMachine {
 
   @Column()
   gameVersion: string;
+
+  @Column({
+    type: 'enum',
+    enum: MachineStatus,
+    default: MachineStatus.IDLE,
+  })
+  status: MachineStatus;
 }

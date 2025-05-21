@@ -1,3 +1,5 @@
+import { MachineStatus } from './MachineStatus';
+
 export interface GamingMachine {
   id: string;
   location: string;
@@ -13,4 +15,5 @@ export interface GamingMachine {
   };
   firmwareVersion: string;
   gameVersion: string;
+  status: MachineStatus;
 }

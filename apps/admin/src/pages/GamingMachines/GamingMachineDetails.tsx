@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { gamingMachineService } from '../../services/gamingMachineService.ts';
 import type { GamingMachine } from '../../types/GamingMachine';
+import { getMachineStatusColor } from '../../utils/machineStatusUtils';
 
 const GamingMachineDetails: React.FC = () => {
   const [machine, setMachine] = useState<GamingMachine | null>(null);
@@ -58,6 +59,11 @@ const GamingMachineDetails: React.FC = () => {
               {machine.location}
             </Descriptions.Item>
             <Descriptions.Item label="Type">{machine.type}</Descriptions.Item>
+            <Descriptions.Item label="Status">
+              <Tag color={getMachineStatusColor(machine.status)}>
+                {machine.status}
+              </Tag>
+            </Descriptions.Item>
             <Descriptions.Item label="Manufacturer">
               {machine.manufacturer}
             </Descriptions.Item>

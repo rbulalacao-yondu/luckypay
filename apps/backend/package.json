@@ -23,7 +23,8 @@
     "migration:generate": "npm run typeorm migration:generate",
     "migration:run": "npm run typeorm migration:run -- -d src/config/typeorm.config.ts",
     "migration:revert": "npm run typeorm migration:revert -- -d src/config/typeorm.config.ts",
-    "seed:coin-ins": "ts-node src/scripts/seed-coin-ins.ts"
+    "seed:coin-ins": "ts-node src/scripts/seed-coin-ins.ts",
+    "seed:gaming-machines": "ts-node src/scripts/seed-gaming-machines.ts"
   },
   "dependencies": {
     "@luckypay/shared-types": "^0.0.1",

@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../app.module';
 import { Repository } from 'typeorm';
 import { GamingMachine } from '../admin/entities/gaming-machine.entity';
+import { MachineStatus } from '../admin/entities/machine-status.enum';
 import { getRepositoryToken } from '@nestjs/typeorm';
 
 const manufacturers = [
@@ -115,14 +116,34 @@ async function seedGamingMachines() {
     },
     firmwareVersion: generateVersion(),
     gameVersion: generateVersion(),
+    status:
+      Object.values(MachineStatus)[
+        Math.floor(Math.random() * Object.values(MachineStatus).length)
+      ],
   }));
 
   try {
-    await gamingMachineRepository.clear(); // Clear existing data
-    for (const machine of machines) {
-      await gamingMachineRepository.save(machine);
+    // Get existing machines
+    const existingMachines = await gamingMachineRepository.find();
+    // Update existing machines
+    for (let i = 0; i < existingMachines.length; i++) {
+      const machine = machines[i];
+      if (machine) {
+        await gamingMachineRepository.update(existingMachines[i].id, machine);
+      }
     }
-    console.log('Successfully seeded 50 gaming machines');
+
+    // Create new machines if needed
+    if (existingMachines.length < machines.length) {
+      const newMachines = machines.slice(existingMachines.length);
+      for (const machine of newMachines) {
+        await gamingMachineRepository.save(machine);
+      }
+    }
+
+    console.log(
+      `Successfully seeded/updated ${machines.length} gaming machines`,
+    );
   } catch (error) {
     console.error('Error seeding gaming machines:', error);
   } finally {
