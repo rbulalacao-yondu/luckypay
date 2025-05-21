@@ -29,6 +29,7 @@ const menuItems = [
   { text: 'OTP Management', icon: KeyIcon, path: '/otp-management' },
   { text: 'Security Logs', icon: ShieldCheckIcon, path: '/security-logs' },
   { text: 'Cash-Ins', icon: BanknotesIcon, path: '/cash-ins' },
+  { text: 'Coin-Ins', icon: BanknotesIcon, path: '/coin-ins' },
   { text: 'Settings', icon: Cog6ToothIcon, path: '/settings' },
 ];
 

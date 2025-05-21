@@ -14,6 +14,8 @@ import { QuerySecurityLogsDto } from './dto/query-security-logs.dto';
 import { SecurityLog, SecurityLogType } from './entities/security-log.entity';
 import { OtpService } from '../auth/services/otp.service';
 import { CashIn } from './entities/cash-in.entity';
+import { CoinIn } from './entities/coin-in.entity';
+import { GamingMachine } from './entities/gaming-machine.entity';
 
 @Injectable()
 export class AdminService {
@@ -24,6 +26,10 @@ export class AdminService {
     private readonly securityLogRepository: Repository<SecurityLog>,
     @InjectRepository(CashIn)
     private readonly cashInRepository: Repository<CashIn>,
+    @InjectRepository(CoinIn)
+    private readonly coinInRepository: Repository<CoinIn>,
+    @InjectRepository(GamingMachine)
+    private readonly gamingMachineRepository: Repository<GamingMachine>,
     private readonly configService: ConfigService,
     private readonly otpService: OtpService,
   ) {}
@@ -360,5 +366,67 @@ export class AdminService {
     }
 
     return cashIn;
+  }
+
+  async findAllCoinIns({
+    page = 1,
+    limit = 10,
+    search,
+    fromDate,
+    toDate,
+    machineId,
+    gameType,
+  }) {
+    const query = this.coinInRepository
+      .createQueryBuilder('coinIn')
+      .leftJoinAndSelect('coinIn.user', 'user')
+      .leftJoinAndSelect('coinIn.machine', 'machine');
+
+    if (search) {
+      query.andWhere(
+        '(user.username LIKE :search OR machine.name LIKE :search)',
+        {
+          search: `%${search}%`,
+        },
+      );
+    }
+
+    if (fromDate && toDate) {
+      query.andWhere('coinIn.timestamp BETWEEN :fromDate AND :toDate', {
+        fromDate,
+        toDate,
+      });
+    }
+
+    if (machineId) {
+      query.andWhere('coinIn.machineId = :machineId', { machineId });
+    }
+
+    if (gameType) {
+      query.andWhere('coinIn.gameType = :gameType', { gameType });
+    }
+
+    const [items, total] = await query
+      .skip((page - 1) * limit)
+      .take(limit)
+      .orderBy('coinIn.timestamp', 'DESC')
+      .getManyAndCount();
+
+    return {
+      items,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
+
+  async findOneCoinIn(id: string) {
+    return this.coinInRepository.findOne({
+      where: { id },
+      relations: ['user', 'machine'],
+    });
   }
 }

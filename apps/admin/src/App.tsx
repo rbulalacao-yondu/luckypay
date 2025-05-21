@@ -14,6 +14,7 @@ import {
 } from './pages/GamingMachines';
 import { PlayersList, PlayerDetails } from './pages/Players';
 import { CashInsList, CashInDetails } from './pages/CashIns';
+import { CoinInsList, CoinInDetails } from './pages/CoinIns';
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,8 @@ function App() {
                 path="gaming-machines/:id"
                 element={<GamingMachineDetails />}
               />
+              <Route path="coin-ins" element={<CoinInsList />} />
+              <Route path="coin-ins/:id" element={<CoinInDetails />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
 

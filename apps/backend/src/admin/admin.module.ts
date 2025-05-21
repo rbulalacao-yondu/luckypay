@@ -7,15 +7,23 @@ import { User } from '../users/entities/user.entity';
 import { SecurityLog } from './entities/security-log.entity';
 import { GamingMachine } from './entities/gaming-machine.entity';
 import { CashIn } from './entities/cash-in.entity';
+import { CoinIn } from './entities/coin-in.entity';
 import { GamingMachineService } from './services/gaming-machine.service';
 import { GamingMachineController } from './controllers/gaming-machine.controller';
 import { PlayersController } from './controllers/players.controller';
 import { CashInsController } from './controllers/cash-ins.controller';
+import { CoinInsController } from './controllers/coin-ins.controller';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([User, SecurityLog, GamingMachine, CashIn]),
+    TypeOrmModule.forFeature([
+      User,
+      SecurityLog,
+      GamingMachine,
+      CashIn,
+      CoinIn,
+    ]),
     ConfigModule,
     AuthModule,
   ],
@@ -25,6 +33,7 @@ import { AuthModule } from '../auth/auth.module';
     GamingMachineController,
     PlayersController,
     CashInsController,
+    CoinInsController,
   ],
   exports: [AdminService, GamingMachineService],
 })
