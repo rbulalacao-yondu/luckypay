@@ -5940,3 +5940,100 @@
 {"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T15:47:22.605Z"}
 {"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T15:47:22.606Z"}
 {"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:47:23.514Z"}
+{"context":"NestFactory","level":"info","message":"Starting Nest application...","timestamp":"2025-05-21T15:52:23.018Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T15:52:23.019Z"}
+{"context":"InstanceLoader","level":"info","message":"LoggerModule dependencies initialized","timestamp":"2025-05-21T15:52:23.019Z"}
+{"context":"InstanceLoader","level":"info","message":"PassportModule dependencies initialized","timestamp":"2025-05-21T15:52:23.020Z"}
+{"context":"InstanceLoader","level":"info","message":"ThrottlerModule dependencies initialized","timestamp":"2025-05-21T15:52:23.020Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigHostModule dependencies initialized","timestamp":"2025-05-21T15:52:23.020Z"}
+{"context":"InstanceLoader","level":"info","message":"AppModule dependencies initialized","timestamp":"2025-05-21T15:52:23.021Z"}
+{"context":"InstanceLoader","level":"info","message":"CasbinConfigModule dependencies initialized","timestamp":"2025-05-21T15:52:23.021Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T15:52:23.022Z"}
+{"context":"InstanceLoader","level":"info","message":"ConfigModule dependencies initialized","timestamp":"2025-05-21T15:52:23.022Z"}
+{"context":"InstanceLoader","level":"info","message":"SecurityModule dependencies initialized","timestamp":"2025-05-21T15:52:23.022Z"}
+{"context":"InstanceLoader","level":"info","message":"JwtModule dependencies initialized","timestamp":"2025-05-21T15:52:23.022Z"}
+{"context":"InstanceLoader","level":"info","message":"WinstonModule dependencies initialized","timestamp":"2025-05-21T15:52:23.023Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmCoreModule dependencies initialized","timestamp":"2025-05-21T15:52:23.023Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T15:52:23.023Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T15:52:23.023Z"}
+{"context":"InstanceLoader","level":"info","message":"TypeOrmModule dependencies initialized","timestamp":"2025-05-21T15:52:23.024Z"}
+{"context":"InstanceLoader","level":"info","message":"UsersModule dependencies initialized","timestamp":"2025-05-21T15:52:23.024Z"}
+{"context":"InstanceLoader","level":"info","message":"AdminModule dependencies initialized","timestamp":"2025-05-21T15:52:23.024Z"}
+{"context":"InstanceLoader","level":"info","message":"AuthModule dependencies initialized","timestamp":"2025-05-21T15:52:23.024Z"}
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/admin/create, POST} route","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty-manager/create, POST} route","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/transactions, GET} route","timestamp":"2025-05-21T15:52:23.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/loyalty/status, GET} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/request-otp, POST} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/verify-otp, POST} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/logout, POST} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/refresh, POST} route","timestamp":"2025-05-21T15:52:23.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/admin/login, POST} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/debug/auth, GET} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RoutesResolver","level":"info","message":"AdminController {/admin}:","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, GET} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/by-role, GET} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/role, PUT} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/:id, GET} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users, POST} route","timestamp":"2025-05-21T15:52:23.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/:id, PUT} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/users/:id, DELETE} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RoutesResolver","level":"info","message":"GamingMachineController {/admin/gaming-machines}:","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines, GET} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/search, GET} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/gaming-machines/:id, GET} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayersController {/admin/players}:","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players, GET} route","timestamp":"2025-05-21T15:52:23.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/search, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/players/:id, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RoutesResolver","level":"info","message":"CashInsController {/admin/cash-ins}:","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/search, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/cash-ins/:id, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RoutesResolver","level":"info","message":"CoinInsController {/admin/coin-ins}:","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/coin-ins, GET} route","timestamp":"2025-05-21T15:52:23.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/coin-ins/:id, GET} route","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RoutesResolver","level":"info","message":"DashboardController {/admin/dashboard}:","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/dashboard/financial-stats, GET} route","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RoutesResolver","level":"info","message":"MachineAnalyticsController {/admin/machine-analytics}:","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/machine-analytics, GET} route","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RoutesResolver","level":"info","message":"PlayerAnalyticsController {/admin/dashboard/player-analytics}:","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/admin/dashboard/player-analytics, GET} route","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-05-21T15:52:23.030Z"}
+{"context":"NestApplication","level":"info","message":"Application is running on: http://[::1]:3000","timestamp":"2025-05-21T15:52:23.031Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:52:45.667Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/users, user role: super_admin, required roles: super_admin, admin","timestamp":"2025-05-21T15:52:52.495Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:52:55.287Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:53:05.536Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:58:31.546Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:06.367Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/machine-analytics, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:07.301Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:35.864Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/machine-analytics, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:35.932Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/player-analytics, user role: super_admin, required roles: super_admin, admin","timestamp":"2025-05-21T15:59:36.572Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:51.720Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/machine-analytics, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T15:59:51.746Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/player-analytics, user role: super_admin, required roles: super_admin, admin","timestamp":"2025-05-21T15:59:51.764Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:00:04.072Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/machine-analytics, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:00:04.073Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/player-analytics, user role: super_admin, required roles: super_admin, admin","timestamp":"2025-05-21T16:00:04.108Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/financial-stats, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:01:38.345Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/machine-analytics, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:01:38.358Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/dashboard/player-analytics, user role: super_admin, required roles: super_admin, admin","timestamp":"2025-05-21T16:01:38.385Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:01:39.813Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:01:39.822Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T16:02:48.544Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/cash-ins, user role: super_admin, required roles: admin, super_admin, finance_admin","timestamp":"2025-05-21T16:02:48.626Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/gaming-machines, user role: super_admin, required roles: super_admin, finance_admin","timestamp":"2025-05-21T16:02:49.538Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:51.811Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:51.820Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:53.587Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players/:id, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:53.594Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:58.555Z"}
+{"context":"RolesGuard","level":"info","message":"Checking access for path: /admin/players, user role: super_admin, required roles: admin, super_admin","timestamp":"2025-05-21T16:02:58.563Z"}

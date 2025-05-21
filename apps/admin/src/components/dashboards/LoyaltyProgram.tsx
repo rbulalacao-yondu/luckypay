@@ -21,7 +21,7 @@ import {
 import { useLoyaltyProgram } from '../../hooks/queries/useLoyaltyProgram';
 
 const TIER_COLORS = {
-  Diamond: '#1890ff',
+  Diamond: '#9B0000',
   Platinum: '#722ed1',
   Gold: '#faad14',
   Silver: '#bfbfbf',
@@ -72,8 +72,8 @@ export const LoyaltyProgram: React.FC = () => {
                 (sum, day) => sum + day.newMembers,
                 0,
               )}
-              prefix={<UsergroupAddOutlined style={{ color: '#1890ff' }} />}
-              valueStyle={{ color: '#1890ff' }}
+              prefix={<UsergroupAddOutlined style={{ color: '#9B0000' }} />}
+              valueStyle={{ color: '#9B0000' }}
             />
           </Card>
         </Col>
@@ -138,7 +138,7 @@ export const LoyaltyProgram: React.FC = () => {
                   <Line
                     type="monotone"
                     dataKey="totalMembers"
-                    stroke="#1890ff"
+                    stroke="#9B0000"
                     name="Total Members"
                   />
                   <Line
