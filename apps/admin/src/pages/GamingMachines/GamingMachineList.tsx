@@ -29,7 +29,12 @@ const GamingMachineList: React.FC = () => {
   const gameTypes = Array.from(new Set(machines.flatMap((m) => m.gameTypes)));
 
   const columns = [
-    { title: 'ID', dataIndex: 'id', key: 'id' },
+    {
+      title: 'ID',
+      dataIndex: 'id',
+      key: 'id',
+      render: (id: string) => id.slice(-6),
+    },
     { title: 'Location', dataIndex: 'location', key: 'location' },
     { title: 'Type', dataIndex: 'type', key: 'type' },
     { title: 'Manufacturer', dataIndex: 'manufacturer', key: 'manufacturer' },
